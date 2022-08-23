@@ -308,6 +308,10 @@ Fonts
        url('../fonts/roboto-slab-v23-latin-900.svg#RobotoSlab') format('svg'); /* Legacy iOS */
 }
 
+body {
+	hyphens: auto;
+}
+
 
 /*#####################
 Seitenelemente
@@ -841,8 +845,10 @@ Seiteninterner Textlink groß
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
 	overflow: auto; /* Enable scroll if needed */
+	-epub-hyphens: auto;
+	hyphens: auto;
 	/*background-color: rgb(0,0,0);*/ /* Fallback color */
-	background-color:hsla(0,0%,95%,0.95) /* Black w/ opacity */
+	background-color:hsla(0,0%,95%,0.95); /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -1203,8 +1209,8 @@ Responsive
 		font-size: 20px;
 		line-height: 1.5em;
 		text-align: center;
-		margin-top: 40px;
-		margin-bottom: 5px;
+		margin-top: 7vh;
+		margin-bottom: 7vh;
 		color: white;
 	}
 	
@@ -1213,7 +1219,7 @@ Responsive
 		font-weight: 400;
 		font-size: 16px;
 		text-align: center;
-		margin-top: 40px;
+		margin-top: 0px;
 		margin-bottom: 5px;
 		color: white;
 	}
@@ -1232,7 +1238,7 @@ Responsive
 	}
 
 	.sub-nav-mobile-menu {
-		margin-top: 30%;
+		/*margin-top: 30%;*/
 	}
 
 	.popupText:hover span, .popupText:active span {
@@ -1322,6 +1328,7 @@ Responsive
 
 	.sub-nav-grid-wrapper-slider.-open {
 		display: flex;
+		align-items: center;
 		transform: translateY(-35vh);
 		transition: all 0.5s ease;
 		visibility: visible;
