@@ -415,7 +415,6 @@ header {
 .spurensuche{
 	height: 40px;
 	width: 500px;
-	margin: 0 auto;
 	background-image: url("../img/verein_spurensuche_harzregion_e_V_logo.png");
 	background-size: contain;
 	background-repeat: no-repeat;
