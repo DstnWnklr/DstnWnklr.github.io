@@ -1,0 +1,285 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+<meta name="author" content="Lucas Kahl , Dustin Winkler">
+<meta name="Description" content="">
+<title>Impressum</title>
+<link href="CSS/reset.css" rel="stylesheet" type="text/css">	
+<link href="CSS/element_layout.css" rel="stylesheet" type="text/css">
+<link href="CSS/element_design.css" rel="stylesheet" type="text/css">	
+	
+<!--Import Fonts-->
+	<!--//Roboto Slab-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 	
+	<!--//Roboto-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 
+
+	
+</head>
+	
+	<a href="index.html"><div class="main-logo"></div></a>
+	
+	<!--###############
+	Gesamt-Contentwrapper -> ANFANG
+	###################-->
+	<div class="content-wrapper">
+		<div class="page-headline"> <h1>Goslar in der NS-Zeit</h1> </div>
+			<!--Hier kommt eventuell die Navigation anteilig rein -->
+			<!-- Menu -->
+		<nav>
+			<!-- Menu für Ansichten über 900px -->
+			<div class="navMenuDesktop">
+				<div class="dropdown">
+					<a href="index.html"><button class="dropbtn">Startseite</button></a>
+					<div class="underline"></div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Stätten der Unterdrückung</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+						<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+						<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+						<a href="frankenberger-plan.html">Frankenberger Plan</a>
+						<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Orte der NS-Machtdemonstration</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="bahnhof.html">Bahnhof</a>
+						<a href="reichsbauernhochschule.html">Reichsbauernhochschule</a>
+						<a href="grabanlage-darre.html">Grabanlage Darré</a>
+						<a href="kaiserpfalz.html">Kaiserpfalz</a>
+						<a href="erzbergwerk-rammelsberg.html">Erzbergwerk Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Ereignisse</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+					  	<a href="erntedankfest.html">Erntedankfest</a>
+						<a href="reichsbauerntage.html">Reichsbauerntage</a>
+						<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Externe Links</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+						<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+						<a href="#">Stolpersteine Gosslar</a>
+					</div>
+				</div>
+			</div>
+			<!-- Menu für Ansichten unter 900px -->
+			<div class="navMenuMobile">
+				<div class="hamburger" id="hamburgerID">
+					<div>
+						<span class="line-1"></span>
+						<span class="line-2"></span>
+						<span class="line-3"></span>
+					</div>
+				</div>
+			</div>
+			<div class="navMenuMobileSlider">
+				<div class="navMenuMobileContent">
+					<div class="navMenuMobileLogo">
+						<a href="index.html">
+							<img src="img/Logo-main_neu_w.png" alt="Geschichtspunkte Goslar Logo">
+						</a>
+					</div>
+					<div class="dropdownContainer">
+						<div class="dropdownMenu">
+							<button class="dropbtnMenu"><a href="index.html">Startseite</a></button>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionFirstDropdown()" class="dropbtnMenu">Stätten der Unterdrückung</button>
+						  <div id="firstDropdownId" class="dropdownMenu-content">
+							<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+							<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+							<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+							<a href="frankenberger-plan.html">Frankenberger Plan</a>
+							<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionSecondDropdown()" class="dropbtnMenu">Orte der NS-Machtdemonstration</button>
+						  <div id="secondDropdownId" class="dropdownMenu-content">
+							<a href="bahnhof.html">Bahnhofsvorplatz</a>
+							<a href="reichsbauernhochschule.html">Bauernhochschule</a>
+							<a href="grabanlage-darre.html">Grabanlage Darré</a>
+							<a href="kaiserpfalz.html">Kaiserpfalz</a>
+							<a href="erzbergwerk-rammelsberg.html">Tagesanlagen</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+							<button onclick="functionThirdDropdown()" class="dropbtnMenu">Ereignisse</button>
+							<div id="thirdDropdownId" class="dropdownMenu-content">
+							  	<a href="erntedankfest.html">Erntedankfest</a>
+								<a href="reichsbauerntage.html">Reichsbauerntage</a>
+								<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+							</div>
+						  </div>
+						  <div class="dropdownMenu">
+							<button onclick="functionFourthDropdown()" class="dropbtnMenu">Externe Links</button>
+							<div id="fourthDropdownId" class="dropdownMenu-content">
+							  	<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+								<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+								<a href="#">Stolpersteine Gosslar</a>
+							</div>
+						  </div>
+					  </div>	
+				</div>
+			</div>
+		</nav>
+		
+		<div class="headline-einspaltig">Impressum</div>
+		
+		
+		<!--###############
+		zweispaltiges Layout -> ANFANG
+		###################-->
+		<div class="two_column_layout"><!--linke Spalte -> ANFANG-->
+			<div class="two_column_layout_left">
+				<div class="two_column_layout_left_text">
+					<p>
+                        <b>Verantwortlich:</b>
+                        <br>
+                        Spurensuche Harzregion e.V. c/o 1. 
+                        <br>
+                        Am Oberen Dorfbach 12 
+                        <br>
+                        38644 Goslar
+                        <br>
+                        <br>
+                        Vorsitzender: 
+                        <br>
+                        • Oliver Turk
+                        <br>
+                        • Telefonnummer: <u><a href="tel: 01714168266" style="color: black;"> 0171 4168266</a></u>
+                        <br>
+                        • E-Mail: <u><a href="mailto:oliver.turk@outlook.de" style="color: black;">oliver.turk@outlook.de</a></u>
+                        <br>
+                        <br>
+                        Redaktion und verantwortlich für Text und Bild: 
+                        <br>
+                        • Dr. Peter Schyga
+                        <br>
+                        • Dr. Johannes Großewinkelmann
+                        <br>
+                        <br>
+                        Technische und gestalterische Umsetzung:
+                        <br>
+                        • Lucas Kahl
+                        <br>
+                        • Dustin Winkler
+                        <br>
+                        • Prof. Daniel Ackermann 
+                        <br>
+                        • Prof. Eberhard Högerle 
+                        <br>
+                        <br>
+                        <b>Kontakt:</b>
+                        <br>
+                        Spurensuche Harzregion e.V. c/o 1. 
+                        <br>
+                        Am Oberen Dorfbach 12 
+                        <br>
+                        38644 Goslar
+                        <br>
+                        <br>
+                        Vorsitzender: Oliver Turk
+                        <br>
+                        Telefonnummer: <u><a href="tel: 01714168266" style="color: black;"> 0171 4168266</a></u>
+                        <br>
+                        E-Mail: <u><a href="mailto:oliver.turk@outlook.de" style="color: black;">oliver.turk@outlook.de</a></u>
+                        <br>
+                        <br>
+                        <a href="https://www.spurensuche-harzregion.de" style="color: black;">www.spurensuche-harzregion.de</a> 
+                    </p>
+				</div>
+				
+			</div><!--linke Spalte -> ENDE-->
+		<!--###############
+		zweispaltiges Layout -> ENDE
+		###################-->
+		</div>
+	<!--###############
+	Gesamt-Contentwrapper -> ENDE
+	###################-->
+	
+		<!--#### Subnavigation für die Geschichtspunktseiten Desktop -> ANFANG ####-->
+		<!--<div class="sub-nav-contain">--> 
+			<!--<div class="sub-nav-grid-wrapper">
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-passiv"><a href="#">Vorheriges</a></div>
+				</div>
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-activ"><a href="gp06-bahnhofsvorplatz.html">Bahnhof</a></div>
+				</div>
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-passiv"><a href="#">Nachfolgendes</a></div>
+				</div>  
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-passiv"></div></a>
+				</div>
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-activ"></div></a>
+				</div>
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-passiv"></div></a>
+				</div>
+			</div>-->
+			<!--<div class="sub-nav-line"></div>--> <!--Graue Linie der Subnavigation-->
+		<!--</div>--> 
+		<!--#### Subnavigation für die Geschichtspunktseiten Desktop -> ENDE ####-->
+	
+		<!--#################### Subnavigation für die Geschichtspunktseiten Mobil #####################-->
+		<!--<div class="sub-nav-contain-mobil">
+			<div class="arrow up"></div>
+			<div class="sub-nav-grid-wrapper-mobil">
+				<div class="icon-left"></div>
+				<div class="sub-nav-mobil-title">
+					<div class="sub-nav-mobil-title-text"><a href="">Bahnhof</a></div>
+				</div>
+				<div class="icon-right"></div>
+			</div>
+			<div class="sub-nav-grid-wrapper-slider">
+				<div class="sub-nav-grid-wrapper-mobile-menu">
+					<div class="sub-nav-mobile-menu">
+						<a href="gp07-bauernhochschule.html"><h3>Bauernhochschule</h3><p></p></a>
+						<a href="gp06-bahnhofsvorplatz.html"><h2>Bahnhof</h2><p></p></a>
+						<a href="#"><h3>Rammelsberg 2</h3><p></p></a>
+					</div>
+				</div>
+			</div>
+		</div>-->
+	
+	
+	<!--#################### Footer #####################-->
+		<footer>
+			<div class="footer-content-mobile">
+				<ul>
+					<li><a href="index.html">&copy; Geschichtspunkte Goslar 2022</a></li>
+					<li><a href="impressum.html">Impressum</a></li>
+					<li><a href="datenschutz.html">Datenschutz</a></li>
+				</ul>
+			</div>
+			<div class="footer-content" > <a href="index.html">&copy; Geschichtspunkte Goslar 2022</a>      |       <a href="impressum.html">Impressum</a>     |     <a href="datenschutz.html">Datenschutz</a> </div>
+		</footer>
+
+<script  src="JS/menu.js"></script>
+<script  src="JS/subMenu.js"></script>
+<body>
+</body>
+</html>
+

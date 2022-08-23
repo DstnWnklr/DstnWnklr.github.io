@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+<meta name="author" content="Lucas Kahl , Dustin Winkler">
+<meta name="Description" content="">
+<title>Reichsbauerntage</title>
+<link href="CSS/reset.css" rel="stylesheet" type="text/css">	
+<link href="CSS/element_layout.css" rel="stylesheet" type="text/css">
+<link href="CSS/element_design.css" rel="stylesheet" type="text/css">	
+	
+<!--Import Fonts-->
+	<!--//Roboto Slab-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 	
+	<!--//Roboto-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 
+
+	
+</head>
+	
+	<a href="index.html"><div class="main-logo"></div></a>
+	
+	<!--###############
+	Gesamt-Contentwrapper -> ANFANG
+	###################-->
+	<div class="content-wrapper">
+		<div class="page-headline"> <h1>Goslar in der NS-Zeit</h1> </div>
+			<!--Hier kommt eventuell die Navigation anteilig rein -->
+			<!-- Menu -->
+		<nav>
+			<!-- Menu für Ansichten über 900px -->
+			<div class="navMenuDesktop">
+				<div class="dropdown">
+					<a href="index.html"><button class="dropbtn">Startseite</button></a>
+					<div class="underline"></div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Stätten der Unterdrückung</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+						<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+						<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+						<a href="frankenberger-plan.html">Frankenberger Plan</a>
+						<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Orte der NS-Machtdemonstration</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="bahnhof.html">Bahnhof</a>
+						<a href="reichsbauernhochschule.html">Reichsbauernhochschule</a>
+						<a href="grabanlage-darre.html">Grabanlage Darré</a>
+						<a href="kaiserpfalz.html">Kaiserpfalz</a>
+						<a href="erzbergwerk-rammelsberg.html">Erzbergwerk Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Ereignisse</button>
+					<div class="activ"></div>
+					<div class="dropdown-content">
+					  	<a href="erntedankfest.html">Erntedankfest</a>
+						<a href="reichsbauerntage.html">Reichsbauerntage</a>
+						<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Externe Links</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+						<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+						<a href="#">Stolpersteine Gosslar</a>
+					</div>
+				</div>
+			</div>
+			<!-- Menu für Ansichten unter 900px -->
+			<div class="navMenuMobile">
+				<div class="hamburger" id="hamburgerID">
+					<div>
+						<span class="line-1"></span>
+						<span class="line-2"></span>
+						<span class="line-3"></span>
+					</div>
+				</div>
+			</div>
+			<div class="navMenuMobileSlider">
+				<div class="navMenuMobileContent">
+					<div class="navMenuMobileLogo">
+						<a href="index.html">
+							<img src="img/Logo-main_neu_w.png" alt="Geschichtspunkte Goslar Logo">
+						</a>
+					</div>
+					<div class="dropdownContainer">
+						<div class="dropdownMenu">
+							<button class="dropbtnMenu"><a href="index.html">Startseite</a></button>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionFirstDropdown()" class="dropbtnMenu">Stätten der Unterdrückung</button>
+						  <div id="firstDropdownId" class="dropdownMenu-content">
+							<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+							<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+							<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+							<a href="frankenberger-plan.html">Frankenberger Plan</a>
+							<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionSecondDropdown()" class="dropbtnMenu">Orte der NS-Machtdemonstration</button>
+						  <div id="secondDropdownId" class="dropdownMenu-content">
+							<a href="bahnhof.html">Bahnhof</a>
+							<a href="reichsbauernhochschule.html">Reichsbauernhochschule</a>
+							<a href="grabanlage-darre.html">Grabanlage Darré</a>
+							<a href="kaiserpfalz.html">Kaiserpfalz</a>
+							<a href="erzbergwerk-rammelsberg.html">Erzbergwerk Rammelsberg</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+							<button onclick="functionThirdDropdown()" class="dropbtnMenu">Ereignisse</button>
+							<div id="thirdDropdownId" class="dropdownMenu-content">
+							  	<a href="erntedankfest.html">Erntedankfest</a>
+								<a href="reichsbauerntage.html">Reichsbauerntage</a>
+								<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+							</div>
+						  </div>
+						  <div class="dropdownMenu">
+							<button onclick="functionFourthDropdown()" class="dropbtnMenu">Externe Links</button>
+							<div id="fourthDropdownId" class="dropdownMenu-content">
+							  	<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+								<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+								<a href="#">Stolpersteine Gosslar</a>
+							</div>
+						  </div>
+					  </div>	
+				</div>
+			</div>
+		</nav>
+		
+		<div class="headline-einspaltig">Reichsbauerntage</div>
+		
+		
+		<!--###############
+		zweispaltiges Layout -> ANFANG
+		###################-->
+		<div class="two_column_layout"><!--linke Spalte -> ANFANG-->
+			<div class="two_column_layout_left">
+				<div class="two_column_layout_left_text">
+					<p>
+						Die Reichbauerntage fanden im November der Jahre 1934, 1935, 1936 und 1938 statt. 1937 fiel der Tag wegen einer grassierenden 
+						Maul- und Klauenseuche aus. Ab 1939 war Krieg. Die Verwaltung der Stadt Goslar mobilisierte ihre Kräfte, um den Jahrestreffen der 
+						Bauern einen attraktiven Rahmen und angenehmen Aufenthalt zu ermöglichen.
+						<br>
+						<br>
+						Einwohner schmückten die Straßen der Stadt mit Tannengirlanden und Spruchbändern, die Hoteliers akzeptierten 
+						Preisbegrenzungen des <a id="Modal02Btn">Reichsnährstands</a> für Kost und Logis der angereisten Bauernvertreter. 1934 noch 
+						in einem Zelt veranstaltet, wurde 1935 für die jährlichen Bauerntreffen die <a id="Modal03Btn">Reichsbauernhalle</a> auf dem 
+						Kattenberg am nordwestlichen Innenstadtrand gebaut.
+						<br>
+						<br>
+						Goslar beherbergte in dieser Woche ungefähr zweitausend Bauernfunktionäre, Trachtenabordnungen, Rassepropagandisten, 
+						Agrarwissenschaftler und Ökonomen. Neben geselligen Treffen und Feierlichkeiten fanden Fachtagungen zu agrartechnischen 
+						und agrarpolitischen Themen statt. Reichsbauernführer Darré nordete seine Bauern mit markigen Reden ein. 
+						<br>
+						<br>
+						Ideologische Rüstungen zur Bedeutung von Blut und Boden des „Bauernadels“, zur Stabilisierung des inneren Zusammenhalts 
+						der Millionen Reichsnährstandmitglieder und ihrer Verortung in der NS- Volksgemeinschaft bildeten die programmatischen 
+						Höhepunkte der Treffen. Das Ankündigungsplakat zeigt die zentralen Elemente der Eigensicht und Außendarstellung: Ein 
+						korngelb kolorierter, mit einem Schwert bewehrter Landmann und Krieger, der mit zwei Ackergäulen sein Feld bestellt, 
+						tatkräftig und bereit das deutsche Volk zu ernähren und zu verteidigen.
+					</p>					
+				</div>
+				
+			</div><!--linke Spalte -> ENDE-->
+			
+			<div class="two_column_layout_right"><!--rechte Spalte -> ANFANG-->
+				<div class="two_column_layout_right_img_container">
+					<div class="imgContainer" onclick="showFotoPopup('img/Reichsbauernhalle_01.jpg')">
+						<img class="img" src="img/Reichsbauernhalle_01.jpg" alt="Reichsbauernhalle Innenansicht">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="img_subline">Reichsbauernhalle Innenansicht</div>
+                    <div class="imgContainer" onclick="showFotoPopup('img/Reichsbauernhalle_02.jpg')">
+						<img class="img" src="img/Reichsbauernhalle_02.jpg" alt="Offizielles Plakat zum Reichsbauerntag 1936">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="img_subline">Offizielles Plakat zum Reichsbauerntag 1936</div>
+					<div class="imgContainer" onclick="showFotoPopup('img/Reichsbauernhalle_03.jpg')">
+						<img class="img" src="img/Reichsbauernhalle_03.jpg" alt="Ausriss aus der GZ v. 16.1. 1934">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="img_subline">Ausriss aus der GZ v. 16.1. 1934</div>
+				</div>
+			<!--rechte Spalte -> ENDE-->
+			</div>
+		<!--###############
+		zweispaltiges Layout -> ENDE
+		###################-->
+		</div>
+		<!--###############
+		Fotopopup
+		###################-->
+		<div id="previewFotoPopup">
+			<div class="previewFotoPopupContainer">
+				<a class="closeFotoPopup" onclick="closeFotoPopup()">&times;</a>
+				<div id="previewFotoPopupInner" onclick="closeFotoPopup()"></div>
+			</div>
+		</div>
+	<!--###############
+	Gesamt-Contentwrapper -> ENDE
+	###################-->
+
+	<div id="Modal01" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Jahrestreffen</h1>
+				<p> 
+					Im Zentrum dieser Tage im November stand die Rede des Reichsbauernführers, der in der 
+					Reichsbauernhalle die Parolen zu geschlagenen und für kommende „Erzeugungsschlachten“ 
+					ausgab. Auszüge aus der Rede von 1938 dokumentieren die Themen, die Darré seit 1933 – 
+					der erster Reichsbauerntag fand noch in Weimar statt – mit unterschiedlichen 
+					Schwerpunktsetzungen jedes Jahr anriss. 
+					<br>
+					<br>
+					Neben völkisch-rassistischen Ideologiepassagen und der 1938 aktuellen Annexionsrhetorik, 
+					in der sein aggressiver Antisemitismus aufblühte, ging es immer um strukturelle und 
+					aktuelle Probleme der Ernährungswirtschaft. Man leide auf dem Land an „der 
+					Not des Leutemangels“, man ächze „unter einer harten Arbeit, welche kaum 
+					noch Feierabend und Sonntag kennt.“ Tatsächlich hatten trotz Arbeitsbuchpflicht 
+					hunderttausende Arbeitskräfte seit 1935 ländliche Regionen verlassen, weil sie 
+					in der Industrie besser verdienten. 
+					<br>
+					<br>
+					Der Beschreibung der Mühsal, die zur Volksernährung notwendigen Produktionsleistungen 
+					aufzubringen, stellt Darré die organisatorischen Leistungen des Reichsnährstands und 
+					den heroischen Eifer der Bauern gegenüber. Bei allem verbalen Loben und Ermutigen 
+					„seiner“ Bauern war denen jedoch klar: Wegen mangelnder technischer Ausrüstung vieler 
+					landwirtschaftlicher Betriebe blieb Handarbeit und damit Überarbeit – gerade auch der 
+					Landfrauen –vielerorts die Regel. Wenn Darré auf die Notwendigkeit der „intensiven 
+					Bearbeitung“ des knappen Bodens hinweist, beklagt er die mangelnde Produktivität der 
+					Landwirtschaft. In Goslar verklausuliert er dies zentrale Problem gesamtwirtschaftlicher 
+					Organisation: „Die heutige Anspannung [sei] bedingt durch die Notwendigkeit, für den Führer 
+					in möglichst kurzer Zeit die deutsche Industrie und die deutsche Armee aufzurüsten. [...] 
+					Noch stehen wir erst in der Mitte des Vierjahresplans. Noch werden sachliche 
+					Erleichterungen nennenswerter Art uns nicht zuteilwerden können.“ 
+					<br>
+					<br>
+					Mit der durch Görings Vierjahresplan angeschobenen verstärkten Aufrüstung seit 1935 hatten – 
+					plakativ formuliert – Panzer statt Traktoren, Sprengstoffe statt Düngemittel Priorität. Die 
+					Produktivität der Landwirtschaft hinkte wegen mangelnder Maschinen, knapper Düngemittel und 
+					fehlender Kapitalisierung weit hinter vergleichbaren Ländern her. Das beschworene Ziel 
+					einer autarken Nahrungsmittelversorgung wurde nie erreicht. Die Lösung der Dilemmata hieß 
+					bekanntlich Krieg, Plünderung, Ostexpansion und -besiedlung.
+				</p>
+			</div>
+	</div>
+	<div id="Modal02" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Reichnährstand</h1>
+				<p> 
+					Der Reichsnährstand war eine per Gesetz v. 19.3.1933 gegründete Monopolorganisation, in der 
+					alle mit Erzeugung, Verarbeitung und Handel von Agrarprodukten Tätigen erfasst waren. 
+					Daneben gab es das Reichsamt für Agrarpolitik, eine Dienststelle der NSDAP, das die 
+					Maßnahmen des Reichsministeriums für Ernährung und Landwirtschaft propagandistisch 
+					begleiten sollte. Sein Organ war die NS-Landpost.
+					<br>
+					<br>
+					Darré hatte in Personalunion die Leitung der drei Organisationen inne. Der Reichsnährstand 
+					(RNST) war die entscheidende Organisation der NS-Agrarpolitik. Dem Reichsbauernführer war 
+					ein eigener administrativer Apparat unterstellt. Streng hierarchisch geordnet fungierten 
+					darunter Landes-, Kreis- und Ortsbauernschaften. In horizontaler Richtung gab es für 
+					jede dieser Ebenen drei Ressorts: Die Hauptabteilung „Mensch“ war zuständig für die 
+					organisatorische Betreuung und propagandistische Ausrichtung der Bauern und Landarbeiter. 
+					<br>
+					<br>
+					Der „Hof“ sollte betriebliche Beratungsfunktion haben, der „Markt“ die Verteilungs- und 
+					Preisorganisation landwirtschaftlicher Produkte überwachen.
+					<div class="imgContainerModal" onclick="showFotoPopup('img/Reichnaehrstand.jpg')">
+						<img class="modal-img" src="img/Reichnaehrstand.jpg" alt="Die Organisation des Reichsnährstands aus: Hermann Reischle, Wilhelm Saure, 1936:">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="modal_img_subline">Die Organisation des Reichsnährstands<br><em>Bild: Hermann Reischle, Wilhelm Saure, 1936: Der Reichsnährstand. Aufbau, Aufgaben und Bedeutung, Berlin, S. 26-27</em></div>
+				</p>
+				<p>
+					Einige Dienststellen des RNST kamen in die Stadt Goslar. Pläne zu einer kompletten Verlegung 
+					aller Abteilungen von Berlin nach Goslar wurden nie verwirklicht. Als Reichsbauernstadt wurde 
+					Goslar während der Reichsbauerntage im November wahrgenommen. Zu den Erntedankfesten zeigte 
+					sich die Reichsbauernstadt in festlichem Glanz, denn: Adolf Hitler kam 1934, 1935 und 1936 
+					nach seinem Auftritt beim Reichserntedankfestes auf dem Bückeberg bei Hameln zur 
+					Erntedankfeier nach Goslar.
+					<br>
+					<br>
+					Der RNST verantwortete nicht nur die Agrarpolitik im Reich und dann in den besetzten Gebieten, 
+					sondern war maßgeblich an den Eroberungs- und Ausplünderungsplänen für ganz Europa beteiligt.
+				</p>
+				 <!--###############
+				Fotopopup
+				###################-->
+				<div id="previewFotoPopup">
+					<div class="previewFotoPopupContainer">
+						<a class="closeFotoPopup" onclick="closeFotoPopup()">&times;</a>
+						<div id="previewFotoPopupInner" onclick="closeFotoPopup()"></div>
+					</div>
+				</div> 
+			</div>
+	</div>
+	<div id="Modal03" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Reichsbauernhalle</h1>
+				<p>
+					Diese Halle, auch Goslarhalle genannt, wurde ab 1939 als Gastronomiebetrieb privatwirtschaftlich genutzt. 
+					Da sich das Geschäft im Krieg nicht mehr lohnte, stand die Halle bis 1941/42 weitgehend leer. Danach 
+					wurde sie als Produktionsstätte für verschiedene Betriebe genutzt, die hier vorwiegend Zwangsarbeiter*innen einsetzten.
+					<br>
+					<br>
+					Mit dem Kriegsende wurden hier Flüchtlinge und Vertriebene untergebracht. Nur durch Stoffbahnen oder 
+					Pappwände abgetrennt harrten etwa 400 Personen – vorwiegend Frauen, Kinder, alte Menschen –lange in diesem 
+					Provisorium aus. 1948 brannte die Goslarhalle ab.
+				</p>
+			</div>
+	</div>	
+
+	</div>
+	
+	
+	
+	<!--#################### Footer #####################-->
+		<footer>
+			<div class="footer-content-mobile">
+				<ul>
+					<li><a href="index.html">&copy; Geschichtspunkte Goslar 2022</a></li>
+					<li><a href="impressum.html">Impressum</a></li>
+					<li><a href="datenschutz.html">Datenschutz</a></li>
+				</ul>
+			</div>
+			<div class="footer-content" > <a href="index.html">&copy; Geschichtspunkte Goslar 2022</a>      |       <a href="impressum.html">Impressum</a>     |     <a href="datenschutz.html">Datenschutz</a> </div>
+		</footer>
+
+<script  src="JS/menu.js"></script>
+<script  src="JS/subMenu.js"></script>
+<script  src="JS/modal01.js"></script>
+<script  src="JS/modal02.js"></script>
+<script  src="JS/modal03.js"></script>
+<script  src="JS/image.js"></script>
+
+<body>
+</body>
+</html>
+

@@ -1,0 +1,474 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+<meta name="author" content="Lucas Kahl , Dustin Winkler">
+<meta name="Description" content="">
+<title>Rammelsberg Projekt</title>
+<link href="CSS/reset.css" rel="stylesheet" type="text/css">	
+<link href="CSS/element_layout.css" rel="stylesheet" type="text/css">
+<link href="CSS/element_design.css" rel="stylesheet" type="text/css">	
+	
+<!--Import Fonts-->
+	<!--//Roboto Slab-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 	
+	<!--//Roboto-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 
+
+	
+</head>
+	
+	<a href="index.html"><div class="main-logo"></div></a>
+	
+	<!--###############
+	Gesamt-Contentwrapper -> ANFANG
+	###################-->
+	<div class="content-wrapper">
+		<div class="page-headline"> <h1>Goslar in der NS-Zeit</h1> </div>
+			<!--Hier kommt eventuell die Navigation anteilig rein -->
+			<!-- Menu -->
+		<nav>
+			<!-- Menu für Ansichten über 900px -->
+			<div class="navMenuDesktop">
+				<div class="dropdown">
+					<a href="index.html"><button class="dropbtn">Startseite</button></a>
+					<div class="underline"></div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Stätten der Unterdrückung</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+						<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+						<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+						<a href="frankenberger-plan.html">Frankenberger Plan</a>
+						<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Orte der NS-Machtdemonstration</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="bahnhof.html">Bahnhof</a>
+						<a href="reichsbauernhochschule.html">Reichsbauernhochschule</a>
+						<a href="grabanlage-darre.html">Grabanlage Darré</a>
+						<a href="kaiserpfalz.html">Kaiserpfalz</a>
+						<a href="erzbergwerk-rammelsberg.html">Erzbergwerk Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Ereignisse</button>
+					<div class="activ"></div>
+					<div class="dropdown-content">
+					  	<a href="erntedankfest.html">Erntedankfest</a>
+						<a href="reichsbauerntage.html">Reichsbauerntage</a>
+						<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Externe Links</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+						<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+						<a href="#">Stolpersteine Gosslar</a>
+					</div>
+				</div>
+			</div>
+			<!-- Menu für Ansichten unter 900px -->
+			<div class="navMenuMobile">
+				<div class="hamburger" id="hamburgerID">
+					<div>
+						<span class="line-1"></span>
+						<span class="line-2"></span>
+						<span class="line-3"></span>
+					</div>
+				</div>
+			</div>
+			<div class="navMenuMobileSlider">
+				<div class="navMenuMobileContent">
+					<div class="navMenuMobileLogo">
+						<a href="index.html">
+							<img src="img/Logo-main_neu_w.png" alt="Geschichtspunkte Goslar Logo">
+						</a>
+					</div>
+					<div class="dropdownContainer">
+						<div class="dropdownMenu">
+							<button class="dropbtnMenu"><a href="index.html">Startseite</a></button>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionFirstDropdown()" class="dropbtnMenu">Stätten der Unterdrückung</button>
+						  <div id="firstDropdownId" class="dropdownMenu-content">
+							<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+							<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+							<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+							<a href="frankenberger-plan.html">Frankenberger Plan</a>
+							<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionSecondDropdown()" class="dropbtnMenu">Orte der NS-Machtdemonstration</button>
+						  <div id="secondDropdownId" class="dropdownMenu-content">
+							<a href="bahnhof.html">Bahnhof</a>
+							<a href="reichsbauernhochschule.html">Reichsbauernhochschule</a>
+							<a href="grabanlage-darre.html">Grabanlage Darré</a>
+							<a href="kaiserpfalz.html">Kaiserpfalz</a>
+							<a href="erzbergwerk-rammelsberg.html">Erzbergwerk Rammelsberg</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+							<button onclick="functionThirdDropdown()" class="dropbtnMenu">Ereignisse</button>
+							<div id="thirdDropdownId" class="dropdownMenu-content">
+							  	<a href="erntedankfest.html">Erntedankfest</a>
+								<a href="reichsbauerntage.html">Reichsbauerntage</a>
+								<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+							</div>
+						  </div>
+						  <div class="dropdownMenu">
+							<button onclick="functionFourthDropdown()" class="dropbtnMenu">Externe Links</button>
+							<div id="fourthDropdownId" class="dropdownMenu-content">
+							  	<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+								<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+								<a href="#">Stolpersteine Gosslar</a>
+							</div>
+						  </div>
+					  </div>	
+				</div>
+			</div>
+		</nav>
+		
+		<div class="headline-einspaltig">Rammelsberg Projekt</div>
+		
+		
+		<!--###############
+		zweispaltiges Layout -> ANFANG
+		###################-->
+		<div class="two_column_layout"><!--linke Spalte -> ANFANG-->
+			<div class="two_column_layout_left">
+				<div class="two_column_layout_left_text">
+					<p>
+						<b>Nationalsozialistische Rohstoffpolitik in der Provinz</b>
+						<br>
+						Schon kurz nach der Machtübernahme 1933 ist den nationalsozialistischen Wirtschaftspolitikern klar, dass die von Adolf Hitler angestrebte 
+						Aufrüstung ohne die Sicherung einer soliden Rohstoffbasis, möglichst im eigenen Land, nicht zu leisten ist. Deshalb geraten auch die 
+						Erzlagerstätten und Hüttenstandorte im Harz und insbesondere das Erzbergwerk Rammelsberg bei Goslar mit der Förderung von Bleiglanz, 
+						Zinkblende, Kupferkies und Schwerspat sowie der Gewinnung von Silber und Gold schnell in den Fokus der NS-Regierung. Die Frage des 
+						Ausbaus der Bergwerksanlagen für die Erzielung einer Unabhängigkeit von ausländischen Erzeinfuhren wird ganz offen mit der politischen 
+						Wirkung durch die Schaffung von Arbeitsplätzen und der Bekämpfung der Bedrohung der deutschen Wirtschaft durch die angebliche beherrschende 
+						Stellung der Juden in der Rohstoffwirtschaft verbunden.
+						<br>
+						<br>
+						Zur Modernisierung des Erzbergwerks Rammelsberg und des <a id="Modal01Btn">Hüttenstandorts in Oker</a> legt das NS-Regime ein regionales  
+						Investitionsprogramm von über 30 Millionen Reichsmark auf. Die zur <span class="popup" onmousedown="popupContent('Preussag', 'Am 9.10.1923 verabschiedete der preußische Landtag ein Gesetz, welches das Preußische Staatsministerium ermächtigte, eine Aktiengesellschaft zu bilden. Auf der Grundlage dieses Gesetzes wurde am 13.12.1923 die Gründung der Preußischen Bergwerks- und Hütten-AG, Berlin (seit 1964 Preussag genannt) vorgenommen.', this);">Preussag</span> 
+						gehörende Betreiberin des Erzbergwerks Rammelsberg, die  
+						<span class="popup" onmousedown="popupContent('Unterharzer Berg- und Hüttenwerke G.m.b.H.', 'Für die Bergwerks- und Hüttenbetriebe des Unterharzes gründete die Preussag am 30.12.1924 die „Unterharzer Berg- und Hüttenwerke GmbH (UBHW)“. Diese Besitz- und Verwaltungsstrukturen bestimmten bis zum Ende des Zweiten Weltkriegs die Leitung der Berg- und Hüttenbetriebe am Unterharz.', this);">Unterharzer Berg- und Hüttenwerke G.m.b.H.</span> 
+						und deren Geschäftsführer <a id="Modal02Btn">Paul Ferdinand Hast</a> sowie der Direktor des Erzbergwerks, <a id="Modal03Btn">Hans-Hermann von Scotti</a>,
+						sprechen bei dem Investitionsprogramm frühzeitig von einem „Rammelsberg-Projekt“. 
+						<br>
+						<br>
+						Darüber hinaus subventionierte der NS-Staat durch Zahlung von Förderprämien auch noch die Differenz zwischen den Kosten der Erzgewinnung 
+						des Bergwerks und des Hüttenbetriebs und den auf dem Weltmarkt zu erzielenden Preisen für Nichteisenmetalle. Es fand quasi eine Rückwälzung 
+						der Verluste über die jeweiligen Produktionsstufen auf das Reich statt. Die Missachtung aller Prinzipien der Wirtschaftlichkeit belegt, 
+						wie rigoros die NS-Regierung ihr Streben nach Autarkie verfolgte.
+						<br>
+						<br>
+						Angesichts dieser Bestrebungen und des Ziels, in wenigen Jahren die deutsche Wehrmacht für einen Krieg aufzurüsten, bestand ein erheblicher 
+						Zeitdruck. Im Mai 1935 brachte der Beauftragte Adolf Hitlers für Wirtschaftsfragen, Wilhelm Keppler, zum Ausdruck, mit dem Neubau der Tagesanlagen 
+						am Erzbergwerk Rammelsberg zu beginnen, um die Rohstoffversorgung im eigenen Land zu sichern. Unter der Leitung des Ministerpräsidenten des 
+						Landes Braunschweig, Dietrich Klagges, der über gute Kontakte zur NS-Regierung verfügte, begannen die Preussag und die Unterharzer 
+						Berg- und Hüttenwerke schnell mit der Planung und Umsetzung der neuen Bergwerks- und Hüttenanlagen.
+						<br>
+						<br>
+						In der Blei-, Zink- und Kupfergewinnung wurden in die 1920er Jahren verschiedene Aufbereitungsverfahren entwickelt, von denen die sogenannte 
+						Schwimmaufbereitung (Flotationsverfahren) eingeführt wurde. Nicht zufällig kam im Juli 1933 durch Unterstützung des Maschinenbauunternehmens 
+						Krupp-Grusonwerke aus Magdeburg die Dissertation des späteren Betriebsleiters des Erzbergwerkes Rammelsberg <a id="Modal04Btn">Emil Kraume</a>, 
+						über die „Schwimmaufbereitung von Rammelsberger Blei-Zink-Erz heraus. Die Krupp-Grusonwerke lieferten die wesentlichen Anlagenteile der neuen Aufbereitung.
+						<br>
+						<br>
+						Mit den Forschungen von Emil Kraume konnte durch die Aufbereitung am Erzbergwerk Rammelsberg nun sowohl ein Blei- als auch ein Zinkkonzentrat erzeugt und 
+						dann auch ein neues Zinkverhüttungsverfahren eingeführt werde. Die nationalsozialistische Industriepolitik knüpfte an diese Kenntnisse an und nutzte die 
+						technische Innovation zur Kriegsvorbereitung.
+						<br>
+						<br>
+						Bereits im Herbst 1936 wurde ein Bauabschnitt der neuen Erzaufbereitungsanlage abgeschlossen und das erste Blei-Zink-Konzentrat verließ das Bergwerk über 
+						eine unterirdische Bahnstrecke, dem Gelenbeeker Stollen, Richtung Hüttenwerk Oker. Kurz vor Beginn des Zweiten Weltkriegs wurden 1939 alle Gebäudeteile 
+						der Aufbereitungsanlage fertiggestellt.
+						<br>
+						<br>
+						Nachdem 1938 der neue <a id="Modal05Btn">Rammelsberg-Schacht</a> abgeteuft worden war, gehörte die Aufbereitungsanlage Ende der 1930er Jahre zu den modernsten 
+						Einrichtungen nicht nur in Deutschland, sondern weltweit. Sie blieb bis zur Schließung des Erzbergwerkes 1988 in Betrieb. In einzelnen Bereichen wurde 
+						lediglich die Maschinentechnik modernisiert oder Verfahrensschritte verändert. Nationalsozialistische Industriepolitik bildete noch weit nach 1945 
+						am Erzbergwerk Rammelsberg die Grundlage für eine erfolgreiche wirtschaftliche Entwicklung in der Nachkriegszeit.
+					</p>
+				</div>
+				
+			</div><!--linke Spalte -> ENDE-->
+			
+			<div class="two_column_layout_right"><!--rechte Spalte -> ANFANG-->
+				<div class="two_column_layout_right_img_container">
+					<div class="imgContainer" onclick="showFotoPopup('img/E_03_Abb_5_Grubenwagen.jpg')">
+						<img class="img" src="img/E_03_Abb_5_Grubenwagen.jpg" alt="Der erste Grubenwagen mit Blei-Zink-Erz wird am 1.10.1936 in die Erzaufbereitungsanlage geschoben">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="img_subline">Der erste Grubenwagen mit Blei-Zink-Erz wird am 1.10.1936 in die Erzaufbereitungsanlage geschoben.<br><em>Bild: Sammlung Weltkulturerbe Rammelsberg</em></div>
+                    <div class="imgContainer" onclick="showFotoPopup('img/E_03_Abb_6-Foerdermengen.jpg')">
+						<img class="img" src="img/E_03_Abb_6-Foerdermengen.jpg" alt="Fördermengen des Erzbergwerkes Rammelsberg 1934 – 1944">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="img_subline">Fördermengen des Erzbergwerkes Rammelsberg 1934 – 1944</div>
+				</div>
+			<!--rechte Spalte -> ENDE-->
+			</div>
+		<!--###############
+		zweispaltiges Layout -> ENDE
+		###################-->
+		</div>
+		<!--###############
+		Fotopopup
+		###################-->
+		<div id="previewFotoPopup">
+			<div class="previewFotoPopupContainer">
+				<a class="closeFotoPopup" onclick="closeFotoPopup()">&times;</a>
+				<div id="previewFotoPopupInner" onclick="closeFotoPopup()"></div>
+			</div>
+		</div>
+	<!--###############
+	Gesamt-Contentwrapper -> ENDE
+	###################-->
+
+	<div id="Modal01" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Hüttenstandort in Oker</h1>
+				<p>Mit der Durchführung des „Rammelsberg-Projektes“ konnte ein Verbund zwischen dem Erzbergwerk und den Hütten im Goslarer Stadtteil Oker hergestellt 
+					werden, in dem die aufbereiteten Rammelsberger Zink- Kupfer- und Blei-Mischkonzentrate verarbeitet wurden.
+					<br>
+					<br>
+					In Oker wurde ab 1936 das bestehende Hüttenwerk komplett umgebaut und modernisiert. Neben der bestehenden Bleikupferhütte in Oker entstand im 
+					benachbarten Harlingerode eine Zinkhütte. Auch die Gebäude der neuen Zinkhütte wurden von den Architekten Fritz Schupp und Martin Kremmer entworfen.
+					<div class="imgContainerModal" onclick="showFotoPopup('img/E-03_Abb_7-Luftbild_1.jpg')">
+						<img class="modal-img" src="img/E-03_Abb_7-Luftbild_1.jpg" alt="Luftbild des Hüttengeländes in Oker (Blickrichtung Osten), 1957">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="modal_img_subline">Luftbild des Hüttengeländes in Oker (Blickrichtung Osten) mit Ortsangaben, 1957<br><em>Bild: Hansa Luftbild / Eisenbahnstiftung, Bearbeitung: Frank Bormann</em></div>
+				</p>
+				<!--###############
+				Fotopopup
+				###################-->
+				<div id="previewFotoPopup">
+					<div class="previewFotoPopupContainer">
+						<a class="closeFotoPopup" onclick="closeFotoPopup()">&times;</a>
+						<div id="previewFotoPopupInner" onclick="closeFotoPopup()"></div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div id="Modal02" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Paul Ferdinand Hast, Hans-Hermann von Scotti, Emil Kraume</h1>
+				<p>
+					<b>Wegbereiter des Erfolgs – Täter aus Überzeugung ?</b>
+					<br>
+					Hinter nüchtern wirkenden Ausführungen zum Ausbau des Erzbergwerkes Rammelsberg in den 1930er Jahren steckten Menschen, die die Entwicklung vorangetrieben 
+					und verantwortet haben. Drei dieser Menschen spielten in dieser Zeit eine besondere Rolle: Bergrat Dr.-Ing. Paul Ferdinand Hast (1890 – 1973), von 1933 
+					bis 1959 Geschäftsführer der Unterharzer Berg- und Hüttenwerke, Bergrat Dr. Ing. Hans Hermann von Scotti (1883 - 1966), von 1934 bis 1937 Werksleiter am 
+					Erzbergwerk Rammelsberg und Dipl. Ing. Dr. Emil Kraume ( 1904 -1969), seit 1936 verantwortlich für den Aufbau der Aufbereitungsanlage.
+					<br>
+					<br>
+					Seit Mai 1934 trieben insbesondere Hans Herrmann v. Scotti (NSDAP-Mitglied seit 1933 ) und Paul Ferdinand Hast (NSDAP-Mitglied seit 1937) die Entwicklung 
+					des Erzbergwerkes Rammelsberg im Sinne der rüstungswirtschaftlichen Ziele des NS-Systems voran. Emil Kraume wurde erst 1939 Mitglied der NSDAP, obwohl er schon 
+					vielfach vorher dazu gedrängt wurde. Er war streng katholisch und haderte deshalb mit dem Parteieintritt.
+					<br>
+					<br>
+					Die drei Genannten waren keine Nationalsozialisten der ersten Stunde, aber diese Männer hatten keine Bedenken, voll auf das neue politische System zu setzen. 
+					Und v. Scotti und Hast bedienten sich dazu des jungen, ehrgeizigen Ingenieurs Emil Kraume, um die notwendige Modernisierung des Erzbergwerkes Rammelsberg 
+					insbesondere in der Aufbereitungstechnik voranzubringen.
+					<div class="imgContainerModal" onclick="showFotoPopup('img/E-03_Abb_8-Scotti.jpg')">
+						<img class="modal-img" src="img/E-03_Abb_8-Scotti.jpg" alt="Hans Hermann v. Scotti (hinter dem Rednerpult) bei einer Festansprache vor dem Rathaus in Goslar, 1935">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="modal_img_subline">Hans Hermann v. Scotti (hinter dem Rednerpult) bei einer Festansprache vor dem Rathaus in Goslar, 1935.<br><em>Bild: Sammlung Weltkulturerbe Rammelsberg</em></div>
+						<div class="imgContainerModal" onclick="showFotoPopup('img/E-03_Abb_9-Kraume.jpg')">
+							<img class="modal-img" src="img/E-03_Abb_9-Kraume.jpg" alt="Emil Kraume, Leiter der Aufbereitung in den 1930er Jahren und später Betriebsleiter des Erzbergwerks Rammelsberg">
+							<img class="imgZoom" src="img/Zoom.png" alt="">
+						</div>
+						<div class="modal_img_subline">Emil Kraume, Leiter der Aufbereitung in den 1930er Jahren und später Betriebsleiter des Erzbergwerks Rammelsberg.<br><em>Bild: Sammlung Weltkulturerbe Rammelsberg, Nachlass Emil Kraume</em></div>
+				</p>
+				<!--###############
+				Fotopopup
+				###################-->
+				<div id="previewFotoPopup">
+					<div class="previewFotoPopupContainer">
+						<a class="closeFotoPopup" onclick="closeFotoPopup()">&times;</a>
+						<div id="previewFotoPopupInner" onclick="closeFotoPopup()"></div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div id="Modal03" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Paul Ferdinand Hast, Hans-Hermann von Scotti, Emil Kraume</h1>
+				<p>
+					<b>Wegbereiter des Erfolgs – Täter aus Überzeugung ?</b>
+					<br>
+					Hinter nüchtern wirkenden Ausführungen zum Ausbau des Erzbergwerkes Rammelsberg in den 1930er Jahren steckten Menschen, die die Entwicklung vorangetrieben 
+					und verantwortet haben. Drei dieser Menschen spielten in dieser Zeit eine besondere Rolle: Bergrat Dr.-Ing. Paul Ferdinand Hast (1890 – 1973), von 1933 
+					bis 1959 Geschäftsführer der Unterharzer Berg- und Hüttenwerke, Bergrat Dr. Ing. Hans Hermann von Scotti (1883 - 1966), von 1934 bis 1937 Werksleiter am 
+					Erzbergwerk Rammelsberg und Dipl. Ing. Dr. Emil Kraume ( 1904 -1969), seit 1936 verantwortlich für den Aufbau der Aufbereitungsanlage.
+					<br>
+					<br>
+					Seit Mai 1934 trieben insbesondere Hans Herrmann v. Scotti (NSDAP-Mitglied seit 1933 ) und Paul Ferdinand Hast (NSDAP-Mitglied seit 1937) die Entwicklung 
+					des Erzbergwerkes Rammelsberg im Sinne der rüstungswirtschaftlichen Ziele des NS-Systems voran. Emil Kraume wurde erst 1939 Mitglied der NSDAP, obwohl er schon 
+					vielfach vorher dazu gedrängt wurde. Er war streng katholisch und haderte deshalb mit dem Parteieintritt.
+					<br>
+					<br>
+					Die drei Genannten waren keine Nationalsozialisten der ersten Stunde, aber diese Männer hatten keine Bedenken, voll auf das neue politische System zu setzen. 
+					Und v. Scotti und Hast bedienten sich dazu des jungen, ehrgeizigen Ingenieurs Emil Kraume, um die notwendige Modernisierung des Erzbergwerkes Rammelsberg 
+					insbesondere in der Aufbereitungstechnik voranzubringen.
+					<div class="imgContainerModal" onclick="showFotoPopup('img/E-03_Abb.8-Scotti.jpg')">
+						<img class="modal-img" src="img/E-03_Abb_8-Scotti.jpg" alt="Hans Hermann v. Scotti (hinter dem Rednerpult) bei einer Festansprache vor dem Rathaus in Goslar, 1935">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="modal_img_subline">Hans Hermann v. Scotti (hinter dem Rednerpult) bei einer Festansprache vor dem Rathaus in Goslar, 1935.<br><em>Bild: Sammlung Weltkulturerbe Rammelsberg</em></div>
+						<div class="imgContainerModal" onclick="showFotoPopup('img/E-03_Abb.9-Kraume.jpg')">
+							<img class="modal-img" src="img/E-03_Abb_9-Kraume.jpg" alt="Emil Kraume, Leiter der Aufbereitung in den 1930er Jahren und später Betriebsleiter des Erzbergwerks Rammelsberg">
+							<img class="imgZoom" src="img/Zoom.png" alt="">
+						</div>
+						<div class="modal_img_subline">Emil Kraume, Leiter der Aufbereitung in den 1930er Jahren und später Betriebsleiter des Erzbergwerks Rammelsberg.<br><em>Bild: Sammlung Weltkulturerbe Rammelsberg, Nachlass Emil Kraume</em></div>
+				</p>
+				<!--###############
+				Fotopopup
+				###################-->
+				<div id="previewFotoPopup">
+					<div class="previewFotoPopupContainer">
+						<a class="closeFotoPopup" onclick="closeFotoPopup()">&times;</a>
+						<div id="previewFotoPopupInner" onclick="closeFotoPopup()"></div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div id="Modal04" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Paul Ferdinand Hast, Hans-Hermann von Scotti, Emil Kraume</h1>
+				<p>
+					<b>Wegbereiter des Erfolgs – Täter aus Überzeugung ?</b>
+					<br>
+					Hinter nüchtern wirkenden Ausführungen zum Ausbau des Erzbergwerkes Rammelsberg in den 1930er Jahren steckten Menschen, die die Entwicklung vorangetrieben 
+					und verantwortet haben. Drei dieser Menschen spielten in dieser Zeit eine besondere Rolle: Bergrat Dr.-Ing. Paul Ferdinand Hast (1890 – 1973), von 1933 
+					bis 1959 Geschäftsführer der Unterharzer Berg- und Hüttenwerke, Bergrat Dr. Ing. Hans Hermann von Scotti (1883 - 1966), von 1934 bis 1937 Werksleiter am 
+					Erzbergwerk Rammelsberg und Dipl. Ing. Dr. Emil Kraume ( 1904 -1969), seit 1936 verantwortlich für den Aufbau der Aufbereitungsanlage.
+					<br>
+					<br>
+					Seit Mai 1934 trieben insbesondere Hans Herrmann v. Scotti (NSDAP-Mitglied seit 1933 ) und Paul Ferdinand Hast (NSDAP-Mitglied seit 1937) die Entwicklung 
+					des Erzbergwerkes Rammelsberg im Sinne der rüstungswirtschaftlichen Ziele des NS-Systems voran. Emil Kraume wurde erst 1939 Mitglied der NSDAP, obwohl er schon 
+					vielfach vorher dazu gedrängt wurde. Er war streng katholisch und haderte deshalb mit dem Parteieintritt.
+					<br>
+					<br>
+					Die drei Genannten waren keine Nationalsozialisten der ersten Stunde, aber diese Männer hatten keine Bedenken, voll auf das neue politische System zu setzen. 
+					Und v. Scotti und Hast bedienten sich dazu des jungen, ehrgeizigen Ingenieurs Emil Kraume, um die notwendige Modernisierung des Erzbergwerkes Rammelsberg 
+					insbesondere in der Aufbereitungstechnik voranzubringen.
+					<div class="imgContainerModal" onclick="showFotoPopup('img/E-03_Abb.8-Scotti.jpg')">
+						<img class="modal-img" src="img/E-03_Abb_8-Scotti.jpg" alt="Hans Hermann v. Scotti (hinter dem Rednerpult) bei einer Festansprache vor dem Rathaus in Goslar, 1935">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="modal_img_subline">Hans Hermann v. Scotti (hinter dem Rednerpult) bei einer Festansprache vor dem Rathaus in Goslar, 1935.<br><em>Bild: Sammlung Weltkulturerbe Rammelsberg</em></div>
+						<div class="imgContainerModal" onclick="showFotoPopup('img/E-03_Abb.9-Kraume.jpg')">
+							<img class="modal-img" src="img/E-03_Abb_9-Kraume.jpg" alt="Emil Kraume, Leiter der Aufbereitung in den 1930er Jahren und später Betriebsleiter des Erzbergwerks Rammelsberg">
+							<img class="imgZoom" src="img/Zoom.png" alt="">
+						</div>
+						<div class="modal_img_subline">Emil Kraume, Leiter der Aufbereitung in den 1930er Jahren und später Betriebsleiter des Erzbergwerks Rammelsberg.<br><em>Bild: Sammlung Weltkulturerbe Rammelsberg, Nachlass Emil Kraume</em></div>
+				</p>
+				<!--###############
+				Fotopopup
+				###################-->
+				<div id="previewFotoPopup">
+					<div class="previewFotoPopupContainer">
+						<a class="closeFotoPopup" onclick="closeFotoPopup()">&times;</a>
+						<div id="previewFotoPopupInner" onclick="closeFotoPopup()"></div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div id="Modal05" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Rammelsberg-Schacht</h1>
+				<p>
+					<br>
+					Die Tatsache, dass großzügige Kredite durch die NS-Regierung in Aussicht gestellt wurden, führte bei der Geschäftsführung des Erzbergwerkes Rammelsberg 
+					zunächst dazu, den Untertagebetrieb wieder stärker zu systematisieren und damit die Produktivität der Förderung schon vor 1936 wesentlich zu verbessern. 
+					Der Abbaubetrieb wurde verdichtet und neue Leistungsprämien für die Hauer eingeführt. Die Produktivität der Arbeit konnte bereits im Geschäftsjahr 1934/35 
+					wesentlich gesteigert werden, bei weiterhin stark gedrückten Löhnen.
+					<br>
+					<br>
+					Das Abteufen eines neuen Hauptförderschachtes, des Rammelsberg-Schachts, dessen Fördergerüst noch heute die Übertageanlagen am höchsten Punkt des 
+					ehemaligen Erzbergwerkes dominiert, zeigte die Veränderungen im Grubenbetrieb spätestens am 15. Januar 1938 an. An diesem Tag wurde der insgesamt 482 
+					Meter tiefe Rammelsberg-Schacht in Betrieb genommen. Über den Rammelsberg-Schacht konnte nun das in der Grube gewonnene Erz auf das oberste Geländeniveau 
+					der Aufbereitungsanlage gehoben werden, von dem aus es mittels Schwerkraft durch das natürliche Gefälle des Hangs in die einzelnen Stufen der Aufbereitung 
+					transportiert werden konnte.
+				</p>
+			</div>
+	</div>
+	</div>
+
+	<!--#################### Subnavigation für die Geschichtspunktseiten Mobil #####################-->
+	<div class="sub-nav-contain-mobil" style="display: none;">
+		<div class="arrow up"></div>
+		<div class="sub-nav-grid-wrapper-mobil">
+			<div class="icon-left"></div>
+			<div class="sub-nav-mobil-title">
+				<div class="sub-nav-mobil-title-text"><a>Startseite</a></div>
+			</div>
+			<div class="icon-right"></div>
+		</div>
+		<div class="sub-nav-grid-wrapper-slider">
+			<div class="sub-nav-grid-wrapper-mobile-menu">
+				<div class="sub-nav-mobile-menu">
+					<a href="zwangsarbeit-rammelsberg.html"><h3>Zwangsarbeit Rammelsberg</h3><p></p></a>
+					<a href="index.html"><h2>Startseite</h2><p></p></a>
+					<a href="bahnhof.html"><h3>Bahnhof</h3><p></p></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!--#################### Footer #####################-->
+		<footer>
+			<div class="footer-content-mobile">
+				<ul>
+					<li><a href="index.html">&copy; Geschichtspunkte Goslar 2022</a></li>
+					<li><a href="impressum.html">Impressum</a></li>
+					<li><a href="datenschutz.html">Datenschutz</a></li>
+				</ul>
+			</div>
+			<div class="footer-content" > <a href="index.html">&copy; Geschichtspunkte Goslar 2022</a>      |       <a href="impressum.html">Impressum</a>     |     <a href="datenschutz.html">Datenschutz</a> </div>
+		</footer>
+
+<script  src="JS/menu.js"></script>
+<script  src="JS/subMenu.js"></script>
+<script  src="JS/modal01.js"></script>
+<script  src="JS/modal02.js"></script>
+<script  src="JS/modal03.js"></script>
+<script  src="JS/modal04.js"></script>
+<script  src="JS/modal05.js"></script>
+<script  src="JS/image.js"></script>
+<script  src="JS/short_popup.js"></script>
+
+<body>
+</body>
+</html>
+

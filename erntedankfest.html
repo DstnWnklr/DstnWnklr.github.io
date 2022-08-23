@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+<meta name="author" content="Lucas Kahl , Dustin Winkler">
+<meta name="Description" content="">
+<title>Erntedankfest</title>
+<link href="CSS/reset.css" rel="stylesheet" type="text/css">	
+<link href="CSS/element_layout.css" rel="stylesheet" type="text/css">
+<link href="CSS/element_design.css" rel="stylesheet" type="text/css">	
+	
+<!--Import Fonts-->
+	<!--//Roboto Slab-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 	
+	<!--//Roboto-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 
+
+	
+</head>
+	
+	<a href="index.html"><div class="main-logo"></div></a>
+	
+	<!--###############
+	Gesamt-Contentwrapper -> ANFANG
+	###################-->
+	<div class="content-wrapper">
+		<div class="page-headline"> <h1>Goslar in der NS-Zeit</h1> </div>
+			<!--Hier kommt eventuell die Navigation anteilig rein -->
+			<!-- Menu -->
+		<nav>
+			<!-- Menu für Ansichten über 900px -->
+			<div class="navMenuDesktop">
+				<div class="dropdown">
+					<a href="index.html"><button class="dropbtn">Startseite</button></a>
+					<div class="underline"></div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Stätten der Unterdrückung</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+						<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+						<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+						<a href="frankenberger-plan.html">Frankenberger Plan</a>
+						<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Orte der NS-Machtdemonstration</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="bahnhof.html">Bahnhof</a>
+						<a href="reichsbauernhochschule.html">Reichsbauernhochschule</a>
+						<a href="grabanlage-darre.html">Grabanlage Darré</a>
+						<a href="kaiserpfalz.html">Kaiserpfalz</a>
+						<a href="erzbergwerk-rammelsberg.html">Erzbergwerk Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Ereignisse</button>
+					<div class="activ"></div>
+					<div class="dropdown-content">
+					  	<a href="erntedankfest.html">Erntedankfest</a>
+						<a href="reichsbauerntage.html">Reichsbauerntage</a>
+						<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Externe Links</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+						<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+						<a href="#">Stolpersteine Gosslar</a>
+					</div>
+				</div>
+			</div>
+			<!-- Menu für Ansichten unter 900px -->
+			<div class="navMenuMobile">
+				<div class="hamburger" id="hamburgerID">
+					<div>
+						<span class="line-1"></span>
+						<span class="line-2"></span>
+						<span class="line-3"></span>
+					</div>
+				</div>
+			</div>
+			<div class="navMenuMobileSlider">
+				<div class="navMenuMobileContent">
+					<div class="navMenuMobileLogo">
+						<a href="index.html">
+							<img src="img/Logo-main_neu_w.png" alt="Geschichtspunkte Goslar Logo">
+						</a>
+					</div>
+					<div class="dropdownContainer">
+						<div class="dropdownMenu">
+							<button class="dropbtnMenu"><a href="index.html">Startseite</a></button>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionFirstDropdown()" class="dropbtnMenu">Stätten der Unterdrückung</button>
+						  <div id="firstDropdownId" class="dropdownMenu-content">
+							<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+							<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+							<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+							<a href="frankenberger-plan.html">Frankenberger Plan</a>
+							<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionSecondDropdown()" class="dropbtnMenu">Orte der NS-Machtdemonstration</button>
+						  <div id="secondDropdownId" class="dropdownMenu-content">
+							<a href="bahnhof.html">Bahnhofsvorplatz</a>
+							<a href="reichsbauernhochschule.html">Bauernhochschule</a>
+							<a href="grabanlage-darre.html">Grabanlage Darré</a>
+							<a href="kaiserpfalz.html">Kaiserpfalz</a>
+							<a href="erzbergwerk-rammelsberg.html">Tagesanlagen</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+							<button onclick="functionThirdDropdown()" class="dropbtnMenu">Ereignisse</button>
+							<div id="thirdDropdownId" class="dropdownMenu-content">
+							  	<a href="erntedankfest.html">Erntedankfest</a>
+								<a href="reichsbauerntage.html">Reichsbauerntage</a>
+								<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+							</div>
+						  </div>
+						  <div class="dropdownMenu">
+							<button onclick="functionFourthDropdown()" class="dropbtnMenu">Externe Links</button>
+							<div id="fourthDropdownId" class="dropdownMenu-content">
+							  	<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+								<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+								<a href="#">Stolpersteine Gosslar</a>
+							</div>
+						  </div>
+					  </div>	
+				</div>
+			</div>
+		</nav>
+		
+		<div class="headline-einspaltig">Erntedankfest</div>
+		
+		
+		<!--###############
+		zweispaltiges Layout -> ANFANG
+		###################-->
+		<div class="two_column_layout"><!--linke Spalte -> ANFANG-->
+			<div class="two_column_layout_left">
+				<div class="two_column_layout_left_text">
+					<u><i><a href="https://www.spurensuche-harzregion.de/?publikationen/83" target="_blank" class="externerLink">Erntedankfeste</a></i></u> 
+					hatten in der ersten Hälfte des 20. Jahrhunderts im weiten ländlichen Raum Deutschlands eine große Bedeutung für die Menschen. Denn 
+					eine schlechte Ernte bedeutete nicht nur schrumpfendes Einkommen der Landwirte, sondern leere Regale und überteuerte Lebensmittel 
+					für die gesamte Bevölkerung. Seit Jahrhunderten war dieses Fest eine feierliche kirchliche Angelegenheit. Es war nicht an ein fixes 
+					Datum gekoppelt, sondern ein im Oktober bewegliches Sonntagsfest, abhängig von Erntezeiten in den jeweiligen Regionen.
+					<br>
+					Hitler führte im Einvernehmen mit Propagandaminister Goebbels und Reichsbauernführer Darré und mit Zustimmung der Kirchen ab 1933 
+					dies Fest als nationalsozialistisches Kultritual am ersten Sonntag im Oktober ein. Der 
+					<u><i><a href="https://www.dokumentation-bueckeberg.de/de/impressum.html" target="_blank" class="externerLink">Bückeberg</a></i></u> 
+					bei Hameln wurde Austragungsort des national-zentralen Reichserntedankfestes. Tausende kamen zu dieser im Sommer 1933 neu errichteten 
+					Weihestätte, bei der Hitler, Darré und ihr Gefolge den Blut-und-Boden-Kult zelebrierten und die Politik der NS-Machthaber 
+					feierten. Goslar nahm als Reichsbauernstadt im Rahmen der Erntedankfeiern eine besondere Position ein. Die Stadt schmückte und feierte sich, 
+					ganz besonders in den Jahren 1934 bis 1936, als Adolf Hitler sie aus diesem Anlass besuchte. Die Massen jubelten ihm bei der Fahrt durch die Stadt zu.
+					<br>
+					Das Jägerbataillon unter Kommandeur Erwin Rommel trat Hitler zu Ehren vor der Kaiserpfalz an, im Kaiserhaus wurde Hitler bei Anwesenheit der 
+					Reichsnährstandführer und städtischer Prominenz eine Erntekrone überreicht. Mit Kriegsbeginn und Lebensmittelbewirtschaftung war die 
+					NS-Erntedankherrlichkeit in Goslar vorbei.
+				</div>
+				
+			</div><!--linke Spalte -> ENDE-->
+			
+			<div class="two_column_layout_right"><!--rechte Spalte -> ANFANG-->
+				<div class="two_column_layout_right_img_container">
+					<div class="imgContainer" onclick="showFotoPopup('img/E_01_Plakat.jpg')">
+						<img class="img" src="img/E_01_Plakat.jpg" alt="Offizielles Plakat zum Erntedank">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="img_subline">Offizielles Plakat zum Erntedank<br><em>Bild: aus Privatbesitz</em></div>
+                    <div class="imgContainer" onclick="showFotoPopup('img/E-01_Autokorso.jpg')">
+						<img class="img" src="img/E-01_Autokorso.jpg" alt="Der mit Menschen Gefüllte Marktplatz erwartet den Führer">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="img_subline">Der mit Menschen Gefüllte Marktplatz erwartet den Führer</div>
+					<div class="imgContainer" onclick="showFotoPopup('img/E-01_Goslar_Zg.jpg')">
+						<img class="img" src="img/E-01_Goslar_Zg.jpg" alt="Der Führer erhält die Erntekrone">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="img_subline">Der Führer erhält die Erntekrone<br><em>Bild: Stadtarchiv Goslar Zg 99(29)</em></div>
+				</div>
+			<!--rechte Spalte -> ENDE-->
+			</div>
+		<!--###############
+		zweispaltiges Layout -> ENDE
+		###################-->
+		</div>
+		<!--###############
+		Fotopopup
+		###################-->
+		<div id="previewFotoPopup">
+			<div class="previewFotoPopupContainer">
+				<a class="closeFotoPopup" onclick="closeFotoPopup()">&times;</a>
+				<div id="previewFotoPopupInner" onclick="closeFotoPopup()"></div>
+			</div>
+		</div>
+	<!--###############
+	Gesamt-Contentwrapper -> ENDE
+	###################-->
+	
+		<!--#### Subnavigation für die Geschichtspunktseiten Desktop -> ANFANG ####-->
+		<!--<div class="sub-nav-contain">--> 
+			<!--<div class="sub-nav-grid-wrapper">
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-passiv"><a href="#">Vorheriges</a></div>
+				</div>
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-activ"><a href="gp06-bahnhofsvorplatz.html">Bahnhof</a></div>
+				</div>
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-passiv"><a href="#">Nachfolgendes</a></div>
+				</div>  
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-passiv"></div></a>
+				</div>
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-activ"></div></a>
+				</div>
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-passiv"></div></a>
+				</div>
+			</div>-->
+			<!--<div class="sub-nav-line"></div>--> <!--Graue Linie der Subnavigation-->
+		<!--</div>--> 
+		<!--#### Subnavigation für die Geschichtspunktseiten Desktop -> ENDE ####-->
+	
+		<!--#################### Subnavigation für die Geschichtspunktseiten Mobil #####################-->
+		<!--<div class="sub-nav-contain-mobil">
+			<div class="arrow up"></div>
+			<div class="sub-nav-grid-wrapper-mobil">
+				<div class="icon-left"></div>
+				<div class="sub-nav-mobil-title">
+					<div class="sub-nav-mobil-title-text"><a href="">Bahnhof</a></div>
+				</div>
+				<div class="icon-right"></div>
+			</div>
+			<div class="sub-nav-grid-wrapper-slider">
+				<div class="sub-nav-grid-wrapper-mobile-menu">
+					<div class="sub-nav-mobile-menu">
+						<a href="gp07-bauernhochschule.html"><h3>Bauernhochschule</h3><p></p></a>
+						<a href="gp06-bahnhofsvorplatz.html"><h2>Bahnhof</h2><p></p></a>
+						<a href="#"><h3>Rammelsberg 2</h3><p></p></a>
+					</div>
+				</div>
+			</div>
+		</div>-->
+	
+	
+	<!--#################### Footer #####################-->
+		<footer>
+			<div class="footer-content-mobile">
+				<ul>
+					<li><a href="index.html">&copy; Geschichtspunkte Goslar 2022</a></li>
+					<li><a href="impressum.html">Impressum</a></li>
+					<li><a href="datenschutz.html">Datenschutz</a></li>
+				</ul>
+			</div>
+			<div class="footer-content" > <a href="index.html">&copy; Geschichtspunkte Goslar 2022</a>      |       <a href="impressum.html">Impressum</a>     |     <a href="datenschutz.html">Datenschutz</a> </div>
+		</footer>
+
+<script  src="JS/menu.js"></script>
+<script  src="JS/subMenu.js"></script>
+<script  src="JS/modal01.js"></script>
+<script  src="JS/modal02.js"></script>
+<script  src="JS/modal03.js"></script>
+<script  src="JS/image.js"></script>
+
+<body>
+</body>
+</html>
+

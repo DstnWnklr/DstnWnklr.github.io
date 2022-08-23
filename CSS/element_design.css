@@ -1,0 +1,42 @@
+/* CSS Document */
+
+/***** Variablen *****/
+:root {
+    --hellGruen: #8B914B ;
+    --dunkelGruen: #414621;
+    --hellRot: #D43534;
+    --dunkelRot: #BF312E;
+    --schwarz: #04171F;
+    --grau: #707070;
+    --weiß: #FFFFFF;
+    --cremeWeiß: #F2F2F2;
+}
+
+/***** Navigation *****/
+.unterdline {
+    background-color: var(--dunkelRot);
+    height: 2.5px;
+    width: 100%;
+}
+
+nav {
+    background-color: var(--weiß);
+}
+
+nav ul li ul {
+    background-color: var(--cremeWeiß);
+}
+
+/*#####################
+Responsive
+#######################*/
+
+/***** MEDIA-SCREEN 900px *****/
+
+@media screen and (max-width: 1100px){
+
+	/***** anstelle der Menupunkte erscheint nun das Hamburger Menus *****/
+	nav {
+		background-color: var(--schwarz);
+	}
+}

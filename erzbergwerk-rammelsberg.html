@@ -1,0 +1,554 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+<meta name="author" content="Lucas Kahl , Dustin Winkler">
+<meta name="Description" content="">
+<title>Erzbergwerk Rammelsberg</title>
+<link href="CSS/reset.css" rel="stylesheet" type="text/css">	
+<link href="CSS/element_layout.css" rel="stylesheet" type="text/css">
+<link href="CSS/element_design.css" rel="stylesheet" type="text/css">	
+	
+<!--Import Fonts-->
+	<!--//Roboto Slab-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 	
+	<!--//Roboto-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 
+
+<!-- osm leaflet theme -->
+		<!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />-->
+		<link href="CSS/leaflet-local.css" rel="stylesheet" type="text/css"/>
+
+		<!-- leaflet -->
+		<!--<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>-->		
+		<script  src="JS/leaflet-local.js"></script>
+	
+</head>
+	
+	<a href="index.html"><div class="main-logo"></div></a>
+	
+	<!--###############
+	Gesamt-Contentwrapper -> ANFANG
+	###################-->
+	<div class="content-wrapper">
+		<div class="page-headline"> <h1>Goslar in der NS-Zeit</h1> </div>
+			<!--Hier kommt eventuell die Navigation anteilig rein -->
+			<!-- Menu -->
+		<nav>
+			<!-- Menu für Ansichten über 900px -->
+			<div class="navMenuDesktop">
+				<div class="dropdown">
+					<a href="index.html"><button class="dropbtn">Startseite</button></a>
+					<div class="underline"></div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Stätten der Unterdrückung</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+						<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+						<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+						<a href="frankenberger-plan.html">Frankenberger Plan</a>
+						<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Orte der NS-Machtdemonstration</button>
+					<div class="activ"></div>
+					<div class="dropdown-content">
+						<a href="bahnhof.html">Bahnhof</a>
+						<a href="reichsbauernhochschule.html">Reichsbauernhochschule</a>
+						<a href="grabanlage-darre.html">Grabanlage Darré</a>
+						<a href="kaiserpfalz.html">Kaiserpfalz</a>
+						<a href="erzbergwerk-rammelsberg.html">Erzbergwerk Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Ereignisse</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+					  	<a href="erntedankfest.html">Erntedankfest</a>
+						<a href="reichsbauerntage.html">Reichsbauerntage</a>
+						<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Externe Links</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+						<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+						<a href="#">Stolpersteine Gosslar</a>
+					</div>
+				</div>
+			</div>
+			<!-- Menu für Ansichten unter 900px -->
+			<div class="navMenuMobile">
+				<div class="hamburger" id="hamburgerID">
+					<div>
+						<span class="line-1"></span>
+						<span class="line-2"></span>
+						<span class="line-3"></span>
+					</div>
+				</div>
+			</div>
+			<div class="navMenuMobileSlider">
+				<div class="navMenuMobileContent">
+					<div class="navMenuMobileLogo">
+						<a href="index.html">
+							<img src="img/Logo-main_neu_w.png" alt="Geschichtspunkte Goslar Logo">
+						</a>
+					</div>
+					<div class="dropdownContainer">
+						<div class="dropdownMenu">
+							<button class="dropbtnMenu"><a href="index.html">Startseite</a></button>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionFirstDropdown()" class="dropbtnMenu">Stätten der Unterdrückung</button>
+						  <div id="firstDropdownId" class="dropdownMenu-content">
+							<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+							<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+							<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+							<a href="frankenberger-plan.html">Frankenberger Plan</a>
+							<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionSecondDropdown()" class="dropbtnMenu">Orte der NS-Machtdemonstration</button>
+						  <div id="secondDropdownId" class="dropdownMenu-content">
+							<a href="bahnhof.html">Bahnhof</a>
+							<a href="reichsbauernhochschule.html">Reichsbauernhochschule</a>
+							<a href="grabanlage-darre.html">Grabanlage Darré</a>
+							<a href="kaiserpfalz.html">Kaiserpfalz</a>
+							<a href="erzbergwerk-rammelsberg.html">Erzbergwerk Rammelsberg</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+							<button onclick="functionThirdDropdown()" class="dropbtnMenu">Ereignisse</button>
+							<div id="thirdDropdownId" class="dropdownMenu-content">
+							  	<a href="erntedankfest.html">Erntedankfest</a>
+								<a href="reichsbauerntage.html">Reichsbauerntage</a>
+								<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+							</div>
+						  </div>
+						  <div class="dropdownMenu">
+							<button onclick="functionFourthDropdown()" class="dropbtnMenu">Externe Links</button>
+							<div id="fourthDropdownId" class="dropdownMenu-content">
+							  	<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+								<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+								<a href="#">Stolpersteine Gosslar</a>
+							</div>
+						  </div>
+					  </div>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="headline-einspaltig">Erzbergwerk Rammelsberg</div>
+		
+				<!--###############
+				Karte
+				###################-->
+				<div class="gp-map">
+					<div id="map"></div>
+				</div>
+		
+		<!--###############
+		zweispaltiges Layout -> ANFANG
+		###################-->
+		<div class="two_column_layout"><!--linke Spalte -> ANFANG-->
+			<div class="two_column_layout_left">
+				<div class="two_column_layout_left_text">
+					Finanziert durch ein von der nationalsozialistischen Regierung aufgelegtes regionales Wirtschaftsförderungsprogramm, dem <a href="rammelsberg-projekt.html" class="externerLink"><u>"Rammelsberg-Projekt"</u></a>, wurden die Gebäude des 
+                    Erzbergwerks Rammelsberg ab 1935 völlig umgebaut. Noch heute prägt das Erscheinungsbild aus den 1930er Jahren das Weltkulturerbe Rammelsberg. Ziel des „Rammelsberg-Projektes“ war die Steigerung 
+					der Erzförderung des Bergwerks und der Verhüttung des Erzes im Goslarer Stadtteil Oker. Als regional begrenztes Investitionsprogramm fiel das Projekt ab 1936 mit dem Vierjahresplan (VJP) der 
+					nationalsozialistischen Regierung zusammen. Die deutsche Wehrmacht sollte in vier Jahren kriegsfähig und die deutsche Wirtschaft unabhängig von ausländischen Rohstoffeinfuhren gemacht werden. 
+					Das Erzbergwerk Rammelsberg und die Hüttenbetriebe in Oker waren nun in die sogenannte „Rohstoffschlacht“ eingebunden. Dadurch erhielt die Betriebsführung in vielen Bereichen freie Hand.
+                    <br><br>
+                    Um dem neuen Entwurf der Architekten <a id="Modal01Btn">Fritz Schupp und Martin Kremmer</a> Platz zu machen, mussten die alten Gebäude auf dem Bergwerksgelände, bis auf die Kraftzentrale 
+					mit dem hohen Schornstein abgerissen werden.
+                    <br><br>
+                    Mit der Modernisierung der Aufbereitungstechnik war eine wesentliche höhere Förderung des Bergwerks verbunden. Entsprechend ihrer Bedeutung für das Betriebsergebnis wurden die Gebäude 
+					der Aufbereitungsanlage deshalb in den Mittelpunkt der Gesamtanlage gerückt. Ihr vorgelagert und symmetrisch auf sie ausgerichtet wurde ein Vorplatz angelegt, der auch als Aufmarschplatz diente.
+                    <br><br>
+                    Die Kombination der dunklen Holzvertäfelung auf hell verputzten Betonwänden und die Bruchsteinverkleidung von Stützmauern und Erdgeschossbereichen nahmen Elemente des beim NS-Regime beliebten
+					 <a id="Modal02Btn">landschaftsgebundenen Bauens</a> auf. Hinter der Außenfassade verbergen sich aber Bautechniken der <a id="Modal03Btn">klassischen Moderne</a>, ddenn die Gebäude wurden größtenteils in Stahlfachwerk 
+					 und Stahlbeton ausgeführt.
+                    <br><br>
+                    Die neuen Tagesanlagen und die Modernisierung des Grubenbetriebs ermöglichten eine Steigerung der Erzförderung des Bergwerks von 1934 bis 1938 um fast das Dreifache. Damit unterstützte das Erzbergwerk 
+					Rammelsberg die Unabhängigkeit Deutschlands von ausländischen Rohstoffen (Kupfer, Blei, Zink) und ermöglichte dem NS-Regime, einen Krieg zu beginnen, der Europa in sechs Jahren in Schutt und Asche 
+					legte und über 60 Millionen Menschen das Leben kostete.
+				</div>
+				
+			</div><!--linke Spalte -> ENDE-->
+			
+			<div class="two_column_layout_right"><!--rechte Spalte -> ANFANG-->
+				<div class="two_column_layout_right_img_container">
+					<div class="imgContainer" onclick="showFotoPopup('img/E-3_Abb_1.jpg')">
+						<img class="img" src="img/E-3_Abb_1.jpg" alt="Zustand der Tagesanlagen des Erzbergwerks Rammelsberg kurz vor dem Baubeginn der neuen Gebäude für die Aufbereitungsanlage, 1935.">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="img_subline">Zustand der Tagesanlagen des Erzbergwerks Rammelsberg kurz vor dem Baubeginn der neuen Gebäude für die Aufbereitungsanlage, 1935.<br><em>Bild: Sammlung Weltkulturerbe Rammelsberg</em></div>
+                    <div class="imgContainer" onclick="showFotoPopup('img/E-03_Abb_2.jpg')">
+						<img class="img" src="img/E-03_Abb_2.jpg" alt="Bau der ersten Gebäudeeinheiten der Erzaufbereitung in Stahlfachwerktechnik, 1936">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+                    <div class="img_subline">Bau der ersten Gebäudeeinheiten der Erzaufbereitung in Stahlfachwerktechnik, 1936<br><em>Bild: Sammlung Weltkulturerbe Rammelsberg</em></div>
+                    <div class="imgContainer" onclick="showFotoPopup('img/E-03_Abb_3.jpg')">
+						<img class="img" src="img/E-03_Abb_3.jpg" alt="Zustand der neuen Tagesanlagen vor dem Zweiten Weltkriegs, 1938">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+                    <div class="img_subline">Zustand der neuen Tagesanlagen vor dem Zweiten Weltkriegs, 1938<br><em>Bild: Sammlung Weltkulturerbe Rammelsber</em></div>
+                    <div class="imgContainer" onclick="showFotoPopup('img/E-03_Abb_4.jpg')">
+						<img class="img" src="img/E-03_Abb_4.jpg" alt="Innenansicht (Nordwand) der Lohnhalle mit der Büste Adolf Hitlers und Beflaggung, 1940">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+                    <div class="img_subline">Innenansicht (Nordwand) der Lohnhalle mit der Büste Adolf Hitlers und Beflaggung, 1940<br><em>Bild: Sammlung Weltkulturerbe Rammelsber</em></div>
+				</div>
+			<!--rechte Spalte -> ENDE-->
+			</div>
+		<!--###############
+		zweispaltiges Layout -> ENDE
+		###################-->
+		</div>
+		<!--###############
+		Fotopopup
+		###################-->
+		<div id="previewFotoPopup">
+			<div class="previewFotoPopupContainer">
+				<a class="closeFotoPopup" onclick="closeFotoPopup()">&times;</a>
+				<div id="previewFotoPopupInner" onclick="closeFotoPopup()"></div>
+			</div>
+		</div>
+	<!--###############
+	Gesamt-Contentwrapper -> ENDE
+	###################-->
+
+	<div id="Modal01" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Fritz Schupp und Martin Kremmer</h1>
+				<p> 
+					Fritz Schupp wurde am 22. Dezember 1896 in Krefeld als Sohn eines leitenden Angestellten der dort ansässigen chemischen Industrie geboren. An seine Schulausbildung an einem 
+					humanistischen Gymnasium in Essen schloss sich ab 1914 ein Architekturstudium zunächst an der Technischen Hochschule in Karlsruhe an. Bereits hier lernte er den aus Berlin 
+					stammenden Martin Kremmer kennen.
+					<br>
+					<br>
+					Martin Kremmer wurde 1894 im polnischen Posen/Poznan als Sohn eines Oberstudiendirektors geboren. Zunächst in Polen zur Schule gegangen, machte Martin Kremmer nach dem Umzug 
+					in Berlin sein Abitur und begann 1915 ein Architekturstudium in Karlsruhe. Im Gegensatz zu Fritz Schupp, der wehruntauglich war, leistete Kremmer seinen Militärdienst im 
+					Ersten Weltkrieg ab.
+					<div class="imgContainerModal" onclick="showFotoPopup('img/E-3_Abb_11-Schupp.jpg')">
+						<img class="modal-img" src="img/E-3_Abb_11-Schupp.jpg" alt="Fritz Schupp (1896 – 1974)">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="modal_img_subline">Fritz Schupp (1896 – 1974)<br><em>Bild: Kristina Pegels-Hellweg, Bauten für die Industrie, Bochum 2012, S. 434</em></div>
+					<div class="imgContainerModal" onclick="showFotoPopup('img/E-3_Abb_12-Kremmer.jpg')">
+						<img class="modal-img" src="img/E-3_Abb_12-Kremmer.jpg" alt="Martin Kremmer (1894 – 1945)">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="modal_img_subline">Martin Kremmer (1894 – 1945)<br><em>Bild: Kristina Pegels-Hellweg, Bauten für die Industrie, Bochum 2012, S. 434</em></div>
+                </p>  
+				<p>
+					Martin Kremmer stirbt in den letzten Kriegstagen des Zweiten Weltkrieges im Bombenhagel auf Berlin. Fritz Schupp arbeitete nach 1945 als Architekt weiter und wurde 1951 
+					Professor an der Technischen Hochschule Hannover. Neben dem Kulturpreis der Stadt Goslar bekommt Schupp 1965 das Große Bundesverdienstkreuz.
+					<br>
+					<br>
+					Fritz Schupp und Martin Kremmer gehören zu den bedeutendsten deutschen Industriearchitekten des 20. Jahrhunderts. Die Bürogemeinschaft Schupp / Kremmer hat den Industriebau, 
+					vor allem im Bergbau, maßgeblich beeinflusst und war bei nahezu jeder größeren Werksanlage im Ruhrgebiet in Planung und Ausführung involviert. Ihre Gestaltung im Sinne der 
+					klassischen Moderne wurde häufig adaptiert und war Vorbild für zahlreiche weitere Industrieanlagen. Gleich zwei ihrer Industriebauten, der Gesamtkomplex Zeche Zollverein 
+					Schacht 12 in Essen (1927 – 1932) und das Erzbergwerk Rammelsberg (1936 – 1939) in Goslar / Harz, gehören zu den deutschen Industriedenkmalen, denen von der UNESCO der 
+					Rang eines Weltkulturerbes zuerkannt wurde.
+					<div class="imgContainerModal" onclick="showFotoPopup('img/E-3_Abb_13-Zollverein.jpg')">
+						<img class="modal-img" src="img/E-3_Abb_13-Zollverein.jpg" alt="Anton Meinholz, Werkstattgebäude und Kesselhaus mit Schornstein der Zeche Zollverein, Essen 1934">
+						<img class="imgZoom" src="img/Zoom.png" alt="">
+					</div>
+					<div class="modal_img_subline">Anton Meinholz, Werkstattgebäude und Kesselhaus mit Schornstein der Zeche Zollverein, Essen 1934.<br><em>Bild: Stiftung Zollverein (Hg.) Der Blick der Sachlichkeit. Zeche Zollverein im Spiegel der Fotografie, Essen 2016, S. 39.</em></div>
+					<p>
+						Während Zollverein als Musterbeispiel funktionalistischer Architektur der 1920er Jahre nach Vorbild des Bauhauses gilt, wurde das Erzbergwerk Rammelsberg im 
+						Nationalsozialismus von den Architekten in einer traditionsgebundenen, an der regionalen Bauweise orientierten Architektursprache ausgeführt. In den Entwürfen der 
+						beiden Architekten in der Zeit des Nationalsozialismus verschneiden sie historische und aktuelle politische Bezüge mit Elementen der klassischen Moderne. Doch 
+						nicht nur durch ihre Entwürfe machten sich die Architekten zum Teil des NS-Systems, sondern der Industriebau erfüllte eine wichtige Voraussetzung zur 
+						Funktionsfähigkeit des nationalsozialistischen Regimes: Seine Bauten dienten in hohem Maße der Kriegsvorbereitung und -durchführung, nicht zuletzt mittels Ausbeutung 
+						von Zwangsarbeitern und KZ-Häftlingen.
+						<br>
+						<br>
+						Eine Auseinandersetzung um Verantwortung, möglicherweise um eine schuldhafte Verstrickung in Vorhaben des Nationalsozialismus führte Fritz Schupp als Überlebender 
+						der Architektengemeinschaft nach 1945 nicht.
+					</p>
+				</p>
+                 <!--###############
+				Fotopopup
+				###################-->
+				<div id="previewFotoPopup">
+					<div class="previewFotoPopupContainer">
+						<a class="closeFotoPopup" onclick="closeFotoPopup()">&times;</a>
+						<div id="previewFotoPopupInner" onclick="closeFotoPopup()"></div>
+					</div>
+				</div>   
+			</div>
+	</div>
+	<div id="Modal02" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Landschaftsgebundenes Bauen</h1>
+				<p>
+					Im Harz stellte die umgebende Mittelgebirgslandschaft zunächst die größte Herausforderung für Fritz Schupp und Martin Kremmer dar. Fritz Schupp schrieb dazu rückblickend 
+					in der Goslarschen Zeitung vom 7. Juni 1968: „Ganz anders (als bei der Zinkhütte Harlingerode, Anm. d. Verfassers) war es beim Rammelsberg, der fast noch in das Stadtbild 
+					von Goslar hineinreicht und in seiner Berglandschaft liegt. Wir haben die Verantwortung, in solcher Landschaft ein Industriewerk zu bauen, sehr ernst genommen.“ 
+					<br>
+					<br>
+					Mit dem Anpassen der Architektur an die umgebende Landschaft lagen die Architekten auf Linie mit führenden nationalsozialistischen Kulturpolitikern. Diese Architektur war 
+					Teil der Blut-und-Boden-Ideologie der Nationalsozialisten.
+			</div>
+	</div>
+	<div id="Modal03" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1>Klassische Moderne</h1>
+				<p>
+					Die Fabrikbauten von Peter Behrens für die AEG ab 1908 und von Walter Gropius und Adolf Meyer für die Fagus-Werke in Alfeld (1911 – 1914) standen am Beginn einer Entwicklung, 
+					die dann nach der Gründung des Bauhauses 1919 stilbildend für das stand, was später als Bauhaus-Stil bezeichnet wurde.
+					<br>
+					<br>
+					Und tatsächlich wurden wichtige Elemente, z.B. Peter Behrens Backsteinbau und die von ihm bevorzugten Materialien Stahl, Glas und Beton bei weit verbreiteten Varianten der 
+					Industriearchitektur eingesetzt. Alfred Fischer, Edmud Körner und eben auch Fritz Schupp und Martin Kremmer waren wichtige Protagonisten dieser Backsteinarchitektur. Ende 
+					der 1920er Jahre entwickelten sie mit der in Frankreich zuerst vorgestellten Stahlfachwerkarchitektur aber ein eigenständiges Ausdrucksmittel der klassischen Moderne und 
+					eine wichtige Variante der Bauhaus-Architektur. Stahlfachwerk passte hervorragend zu den Anforderungen der Industrie und besonders des Bergbaus, war schnell zu montieren, 
+					gut zu erweitern oder zu verändern, reagierte flexibel auf Erschütterungen und ließ sich bei Bedarf auch schnell wieder demontieren.
+				</div>
+	</div>	
+
+	</div>
+	
+		<div class="sub-nav-contain"> <!--#### Subnavigation für die Geschichtspunktseiten Desktop -> ANFANG ####-->
+			<div class="sub-nav-grid-wrapper">
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-passiv"><a href="kaiserpfalz.html">Kaiserpfalz</a></div>
+				</div>
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-activ"><a href="erzbergwerk-rammelsberg.html">Erzbergwerk Rammelsberg</a></div>
+				</div>
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-passiv"><a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a></div>
+				</div>  
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-passiv"></div></a>
+				</div>
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-activ"></div></a>
+				</div>
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-passiv"></div></a>
+				</div>
+			</div>
+			<div class="sub-nav-line"></div> <!--Graue Linie der Subnavigation-->
+		</div> <!--#### Subnavigation für die Geschichtspunktseiten Desktop -> ENDE ####-->
+	
+		<!--#################### Subnavigation für die Geschichtspunktseiten Mobil #####################-->
+		<div class="sub-nav-contain-mobil">
+			<div class="arrow up"></div>
+			<div class="sub-nav-grid-wrapper-mobil">
+				<div class="icon-left"></div>
+				<div class="sub-nav-mobil-title">
+					<div class="sub-nav-mobil-title-text"><a>Erzbergwerk Rammelsberg</a></div>
+				</div>
+				<div class="icon-right"></div>
+			</div>
+			<div class="sub-nav-grid-wrapper-slider">
+				<div class="sub-nav-grid-wrapper-mobile-menu">
+					<div class="sub-nav-mobile-menu">
+						<a href="kaiserpfalz.html"><h3>Kaiserpfalz</h3><p></p></a>
+						<a href="erzbergwerk-rammelsberg.html"><h2>Erzbergwerk Rammelsberg</h2><p></p></a>
+						<a href="zwangsarbeit-rammelsberg.html"><h3>Zwangsarbeit Rammelsberg</h3><p></p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	
+	<!--#################### Footer #####################-->
+		<footer>
+			<div class="footer-content-mobile">
+				<ul>
+					<li><a href="index.html">&copy; Geschichtspunkte Goslar 2022</a></li>
+					<li><a href="impressum.html">Impressum</a></li>
+					<li><a href="datenschutz.html">Datenschutz</a></li>
+				</ul>
+			</div>
+			<div class="footer-content" > <a href="index.html">&copy; Geschichtspunkte Goslar 2022</a>      |       <a href="impressum.html">Impressum</a>     |     <a href="datenschutz.html">Datenschutz</a> </div>
+		</footer>
+	
+	<!-- osm -->
+		<script>/*#### KartenScript der Seite ####*/
+
+			/*Initialisierung der Custom Marker*/
+			var iconInactiv = L.icon({
+				iconUrl:'img/marker_inactiv.png',
+
+				iconSize:     [25, 37], // size of the icon
+				/*shadowSize:   [50, 64], // size of the shadow*/
+				iconAnchor:   [12.5, 37], // point of the icon which will correspond to marker's location
+				/*shadowAnchor: [4, 62],  // the same for the shadow*/
+				popupAnchor:  [0, -30] // point from which the popup should open relative to the iconAnchor
+			});
+
+			var iconActiv = L.icon({
+				iconUrl:'img/marker_activ.png',
+
+				iconSize: [25, 37], // size of the icon
+				/*shadowSize:   [50, 64], // size of the shadow*/
+				iconAnchor: [12.5, 37], // point of the icon which will correspond to marker's location
+				/*shadowAnchor: [4, 62],  // the same for the shadow*/
+				popupAnchor: [0, -30] // point from which the popup should open relative to the iconAnchor
+			});
+
+
+			/*####################################################
+			Definition des aktiven Markers für den Geschichtspunkt
+			#####################################################*/	
+
+			//Marker Einbindung der Geschichtspunkte
+			//01 Bahnhof
+			var bahnhof = L.marker([51.909955, 10.425339],{icon: iconInactiv});
+			bahnhof.bindPopup('<h3>Bahnhof</h3><br><a href="bahnhof.html">zum Artikel</a><br><br><a href="https://goo.gl/maps/z9gHD9RTdzPZJNtu8" target="_blank">zur Navigation</a>').closePopup();
+			/*bahnhof.bindTooltip("Mehr Infos").openTooltip();*/
+			
+			//02 Zwangsarbeiterlager
+			var zwangsarbeiterlager = L.marker([51.912551, 10.441671],{icon: iconInactiv});
+			zwangsarbeiterlager.bindPopup('<h3>Zwangsarbeiterlager</h3><br><a href="zwangsarbeiterlager.html">zum Artikel</a><br><br><a href="https://goo.gl/maps/z9gHD9RTdzPZJNtu8" target="_blank">zur Navigation</a>').closePopup();
+			/*zwangsarbeiterlager.bindTooltip("Mehr Infos").openTooltip();*/
+			
+			//03 Grabanlage Darré
+			var grabanlageDarre = L.marker([51.913963, 10.419236],{icon: iconInactiv});
+			grabanlageDarre.bindPopup('<h3>Grabanlage Darré</h3><br><a href="grabanlage-darre.html">zum Artikel</a><br><br><a href="https://goo.gl/maps/z9gHD9RTdzPZJNtu8" target="_blank">zur Navigation</a>').closePopup();
+			/*grabanlageDarre.bindTooltip("Mehr Infos").openTooltip();*/
+			
+			//04 Reichsbauernhochschule
+			var reichsbauernhochschule = L.marker([51.909549, 10.419967],{icon: iconInactiv});
+			reichsbauernhochschule.bindPopup('<h3>Reichsbauernhochschule</h3><br><a href="reichsbauernhochschule.html">zum Artikel</a><br><br><a href="https://goo.gl/maps/z9gHD9RTdzPZJNtu8" target="_blank">zur Navigation</a>').closePopup();
+			/*reichsbauernhochschule.bindTooltip("Mehr Infos").openTooltip();*/
+			
+			//05 Gewerkschaftshaus
+			var gewerkschaftshaus = L.marker([51.904828, 10.425093],{icon: iconInactiv});
+			gewerkschaftshaus.bindPopup('<h3>Gewerkschaftshaus</h3><br><a href="gewerkschaftshaus.html">zum Artikel</a><br><br><a href="https://goo.gl/maps/z9gHD9RTdzPZJNtu8" target="_blank">zur Navigation</a>').closePopup();
+			/*gewerkschaftshaus.bindTooltip("Mehr Infos").openTooltip();*/
+			
+			//06 Gerichtsgefängnis
+			var gerichtsgefaengnis = L.marker([51.903534, 10.427719],{icon: iconInactiv});
+			gerichtsgefaengnis.bindPopup('<h3>Gerichtsgefängnis</h3><br><a href="gerichtsgefaengnis.html">zum Artikel</a><br><br><a href="https://goo.gl/maps/z9gHD9RTdzPZJNtu8" target="_blank">zur Navigation</a>').closePopup();
+			/*gerichtsgefaengnis.bindTooltip("Mehr Infos").openTooltip();*/
+			
+			//07 Frankenberger Plan
+			var frankenbergerPlan = L.marker([51.903477, 10.418856],{icon: iconInactiv});
+			frankenbergerPlan.bindPopup('<h3>Frankenberger Plan</h3><br><a href="frankenberger-plan.html">zum Artikel</a><br><br><a href="https://goo.gl/maps/z9gHD9RTdzPZJNtu8" target="_blank">zur Navigation</a>').closePopup();
+			/*frankenbergerPlan.bindTooltip("Mehr Infos").openTooltip();*/
+			
+			//08 Kaiserpfalz
+			var kaiserpfalz = L.marker([51.903316, 10.427355],{icon: iconInactiv});
+			kaiserpfalz.bindPopup('<h3>Kaiserpfalz</h3><br><a href="kaiserpfalz.html">zum Artikel</a><br><br><a href="https://goo.gl/maps/z9gHD9RTdzPZJNtu8" target="_blank">zur Navigation</a>').closePopup();
+			/*kaiserpfalz.bindTooltip("Mehr Infos").openTooltip();*/
+			
+			//09 Erzbergwerk Rammelsberg
+			var erzbergwerkRammelsberg = L.marker([51.889970, 10.417857],{icon: iconActiv});
+			erzbergwerkRammelsberg.bindPopup('<h3>Erzbergwerk Rammelsberg</h3><br><a href="erzbergwerk-rammelsberg.html">zum Artikel</a><br><br><a href="https://goo.gl/maps/z9gHD9RTdzPZJNtu8" target="_blank">zur Navigation</a>').closePopup();
+			/*erzbergwerkRammelsberg.bindTooltip("Mehr Infos").openTooltip();*/
+			
+			//10 Zwangsarbeit Rammelsberg
+			var zwangsarbeitRammelsberg = L.marker([51.888580, 10.419166],{icon: iconInactiv});
+			zwangsarbeitRammelsberg.bindPopup('<h3>Zwangsarbeit Rammelsberg</h3><br><a href="zwangsarbeit-rammelsberg.html">zum Artikel</a><br><br><a href="https://goo.gl/maps/z9gHD9RTdzPZJNtu8" target="_blank">zur Navigation</a>').closePopup();
+			/*zwangsarbeitRammelsberg.bindTooltip("Mehr Infos").openTooltip();*/
+
+			
+
+			//Gruppe mit eingetragenen Geschichtspunkten -> Punkte müssen vorangegangen initialisiert werden
+			var points = L.layerGroup([bahnhof, zwangsarbeiterlager, grabanlageDarre, reichsbauernhochschule, gewerkschaftshaus, gerichtsgefaengnis, frankenbergerPlan, kaiserpfalz, erzbergwerkRammelsberg, zwangsarbeitRammelsberg]);
+			
+
+			//https://stackoverflow.com/questions/37166172/mapbox-tiles-and-leafletjs
+
+			/*Dunkle Karte*/
+			var darkMap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{tileSize}/{z}/{x}/{y}?		access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
+								{maxZoom: 18,
+								 minZoom: 13,
+								attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+									  '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+									  'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+								 //Hier können Mapstiles vergeben werden: verfügbare siehe https://docs.mapbox.com/api/maps/styles/
+								  id: 'mapbox/dark-v10',
+									//streets-v11
+								  tileSize: 512,
+								  zoomOffset: -1
+								});
+			/*Goslar Custom Karte*/	
+			var lightMap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{tileSize}/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibHVjYXNrYWhsIiwiYSI6ImNsMTNsNnBhdjAwOTQzbG52enR5dTlpZ2QifQ.KSOQ6JpnfYScnvn3J1-C_Q',
+								{maxZoom: 18,
+								 minZoom: 13,
+								attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+									  '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+									  'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+								 //Hier können Mapstiles vergeben werden: verfügbare siehe https://docs.mapbox.com/api/maps/styles/
+								  id: 'lucaskahl/cl13ld29f004b14ny86sjkzu0',
+									//streets-v11  light-v10
+								  tileSize: 512,
+								  zoomOffset: -1
+								});
+
+			/*#####################
+			Karte initialisieren
+			#####################*/
+			var screenwidth = screen.width;
+			console.log("Breite " + screenwidth);
+			var zoomlevel = 16;
+
+			if(screenwidth < 900) {
+				zoomlevel = 17;
+			   }
+
+			var landing_map = L.map('map', {
+			//Mittelpunkt der Karte	
+			center: [51.889970, 10.417857],
+			//Zoomstufe -> je größer, desto näher dran
+			zoom: zoomlevel,
+			//Deaktiviert scroll-Zoom der Karte
+			scrollWheelZoom: false,
+			//Default-Ebenen anfügen
+			layers: [lightMap, points]
+			});
+
+			// Switch zwischen den Ebenen	
+			var baseMaps = {
+					"Dark-Mode": darkMap,
+					"Original": lightMap
+				};
+				//checkbox für Geschichtspunkte an-aus
+				var overlayMaps = {
+					"Geschichtspunkte": points
+				};
+				//Layer-Controller wird der Karte hinzugefügt
+				L.control.layers(baseMaps, overlayMaps).addTo(landing_map);
+
+				var baseMaps = {
+					"<span style='color: gray'>Dark</span>": darkMap,
+					"Light": lightMap
+				};
+
+		</script> <!--Ende KartenScript-->
+
+<script  src="JS/menu.js"></script>
+<script  src="JS/subMenu.js"></script>
+<script  src="JS/modal01.js"></script>
+<script  src="JS/modal02.js"></script>
+<script  src="JS/modal03.js"></script>
+<script  src="JS/image.js"></script>
+
+<body>
+</body>
+</html>

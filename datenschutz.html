@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+<meta name="author" content="Lucas Kahl , Dustin Winkler">
+<meta name="Description" content="">
+<title>Datenschutzhinweis</title>
+<link href="CSS/reset.css" rel="stylesheet" type="text/css">	
+<link href="CSS/element_layout.css" rel="stylesheet" type="text/css">
+<link href="CSS/element_design.css" rel="stylesheet" type="text/css">	
+	
+<!--Import Fonts-->
+	<!--//Roboto Slab-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 	
+	<!--//Roboto-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style> 
+
+	
+</head>
+	
+	<a href="index.html"><div class="main-logo"></div></a>
+	
+	<!--###############
+	Gesamt-Contentwrapper -> ANFANG
+	###################-->
+	<div class="content-wrapper">
+		<div class="page-headline"> <h1>Goslar in der NS-Zeit</h1> </div>
+			<!--Hier kommt eventuell die Navigation anteilig rein -->
+			<!-- Menu -->
+		<nav>
+			<!-- Menu für Ansichten über 900px -->
+			<div class="navMenuDesktop">
+				<div class="dropdown">
+					<a href="index.html"><button class="dropbtn">Startseite</button></a>
+					<div class="underline"></div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Stätten der Unterdrückung</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+						<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+						<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+						<a href="frankenberger-plan.html">Frankenberger Plan</a>
+						<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Orte der NS-Machtdemonstration</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="bahnhof.html">Bahnhof</a>
+						<a href="reichsbauernhochschule.html">Reichsbauernhochschule</a>
+						<a href="grabanlage-darre.html">Grabanlage Darré</a>
+						<a href="kaiserpfalz.html">Kaiserpfalz</a>
+						<a href="erzbergwerk-rammelsberg.html">Erzbergwerk Rammelsberg</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Ereignisse</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+					  	<a href="erntedankfest.html">Erntedankfest</a>
+						<a href="reichsbauerntage.html">Reichsbauerntage</a>
+						<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Externe Links</button>
+					<div class="underline"></div>
+					<div class="dropdown-content">
+						<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+						<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+						<a href="#">Stolpersteine Gosslar</a>
+					</div>
+				</div>
+			</div>
+			<!-- Menu für Ansichten unter 900px -->
+			<div class="navMenuMobile">
+				<div class="hamburger" id="hamburgerID">
+					<div>
+						<span class="line-1"></span>
+						<span class="line-2"></span>
+						<span class="line-3"></span>
+					</div>
+				</div>
+			</div>
+			<div class="navMenuMobileSlider">
+				<div class="navMenuMobileContent">
+					<div class="navMenuMobileLogo">
+						<a href="index.html">
+							<img src="img/Logo-main_neu_w.png" alt="Geschichtspunkte Goslar Logo">
+						</a>
+					</div>
+					<div class="dropdownContainer">
+						<div class="dropdownMenu">
+							<button class="dropbtnMenu"><a href="index.html">Startseite</a></button>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionFirstDropdown()" class="dropbtnMenu">Stätten der Unterdrückung</button>
+						  <div id="firstDropdownId" class="dropdownMenu-content">
+							<a href="gerichtsgefaengnis.html">Gerichtsgefängnis</a>
+							<a href="gewerkschaftshaus.html">Gewerkschaftshaus</a>
+							<a href="zwangsarbeiterlager.html">Zwangsarbeiterlager</a>
+							<a href="frankenberger-plan.html">Frankenberger Plan</a>
+							<a href="zwangsarbeit-rammelsberg.html">Zwangsarbeit Rammelsberg</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+						  <button onclick="functionSecondDropdown()" class="dropbtnMenu">Orte der NS-Machtdemonstration</button>
+						  <div id="secondDropdownId" class="dropdownMenu-content">
+							<a href="bahnhof.html">Bahnhofsvorplatz</a>
+							<a href="reichsbauernhochschule.html">Bauernhochschule</a>
+							<a href="grabanlage-darre.html">Grabanlage Darré</a>
+							<a href="kaiserpfalz.html">Kaiserpfalz</a>
+							<a href="erzbergwerk-rammelsberg.html">Tagesanlagen</a>
+						  </div>
+						</div>
+						<div class="dropdownMenu">
+							<button onclick="functionThirdDropdown()" class="dropbtnMenu">Ereignisse</button>
+							<div id="thirdDropdownId" class="dropdownMenu-content">
+							  	<a href="erntedankfest.html">Erntedankfest</a>
+								<a href="reichsbauerntage.html">Reichsbauerntage</a>
+								<a href="rammelsberg-projekt.html">Rammelsberg Projekt</a>
+							</div>
+						  </div>
+						  <div class="dropdownMenu">
+							<button onclick="functionFourthDropdown()" class="dropbtnMenu">Externe Links</button>
+							<div id="fourthDropdownId" class="dropdownMenu-content">
+							  	<a href="https://rammelsberg.de">Rammelsberg Homepage</a>
+								<a href="https://www.spurensuche-harzregion.de">Spurensuche Harzregion e.V.</a>
+								<a href="#">Stolpersteine Gosslar</a>
+							</div>
+						  </div>
+					  </div>	
+				</div>
+			</div>
+		</nav>
+		
+		<div class="headline-einspaltig">Datenschutzerklärung</div>
+		
+		
+		<!--###############
+		zweispaltiges Layout -> ANFANG
+		###################-->
+		<div class="two_column_layout"><!--linke Spalte -> ANFANG-->
+			<div class="two_column_layout_left">
+				<div class="two_column_layout_left_text">
+					<p>
+                        <b>Datenschutzhinweis</b>
+                        <br>
+                        Zugriffe auf den Web-Server des Internetauftrittes werden nur anonym protokolliert. Erfasst werden nur die 
+                        Tatsache des Zugriffs und das aufgerufene Dokument. Ein Bezug auf die Person des Nutzers ist auf jedem Fall 
+                        ausgeschlossen. Die Protokolldaten werden eine gewisse Zeit gespeichert und statistisch ausgewertet. 
+                        Sofern innerhalb unseres Internetangebotes die Möglichkeit zur Eingabe persönlicher oder geschäftlicher 
+                        Daten (E-Mailadressen, Namen, Anschriften) besteht, so erfolgt die Preisgabe dieser Daten durch die 
+                        Nutzerinnen und Nutzer ausdrücklich freiwillig. Die Inanspruchnahme und ggf. Bezahlung aller angebotenen 
+                        Dienste ist – soweit technisch möglich und zumutbar – auch ohne Angabe solcher Daten bzw. unter Angabe 
+                        anonymisierter Daten oder eines Pseudonyms möglich. Sie können alle allgemein zugänglichen Seiten 
+                        benutzen, ohne dass Cookies gesetzt werden.
+                        <br>
+                        <br>
+                        <br>
+                        <b>Haftungsausschluss</b>
+                        <br>
+                        <br>
+                        <em>a) Inhalt des Onlineangebotes</em>
+                        <br>
+                        Der Verantwortliche bzw. Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit 
+                        oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden 
+                        materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen 
+                        Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, 
+                        sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder 
+                        grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich. Der Autor 
+                        behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu 
+                        verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.
+                        <br>
+                        <br>
+                        <em>b) Verweise und Links</em>
+                        <br>
+                        Bei direkten oder indirekten Verweisen auf fremde Internetseiten („Links“), die außerhalb des 
+                        Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung ausschließlich in dem 
+                        Fall in Kraft treten, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich 
+                        und zumutbar wäre, die Nutzung im Falle rechtswidriger Inhalte zu verhindern. Der Autor erklärt hiermit 
+                        ausdrücklich, dass zum Zeitpunkt der Linksetzung keine illegalen Inhalte auf den zu verlinkenden Seiten 
+                        erkennbar waren. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder die Urheberschaft der 
+                        gelinkten / verknüpften Seiten hat der Autor keinerlei Einfluss. Deshalb distanziert er sich 
+                        hiermit ausdrücklich von allen Inhalten aller gelinkten / verknüpften Seiten, die nach der Linksetzung 
+                        verändert wurden. Diese Feststellung gilt für alle innerhalb des eigenen Internetangebotes gesetzten 
+                        Links. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der 
+                        Nutzung oder Nichtnutzung solcherart dargebotener Informationen entstehen, haftet allein der Anbieter 
+                        der Seite, auf welche verwiesen wurde, nicht derjenige, der über Links auf die jeweilige 
+                        Veröffentlichung lediglich verweist.
+                        <br>
+                        <br>
+                        <em>c) Urheber- und Kennzeichenrecht</em>
+                        <br>
+                        Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Grafiken, Tondokumente, 
+                        Videosequenzen und Texte zu beachten, von ihm selbst erstellte Grafiken, Tondokumente, Videosequenzen 
+                        und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte 
+                        zurückzugreifen. Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten 
+                        Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen 
+                        Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Allein 
+                        aufgrund der bloßen Nennung ist nicht der Schluss zu ziehen, dass Markenzeichen nicht durch Rechte 
+                        Dritter geschützt sind. Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte 
+                        bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, 
+                        Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen 
+                        ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.
+                        <br>
+                        <br>
+                        <em>d) Browserempfehlungen</em>
+                        <br>
+                        Aus Sicherheitsgründen sollte stets die aktuellste Version des persönlich genutzten Browsers zum Einsatz kommen. 
+                        Die Darstellung von Seiten der Portalfamilie www.hannover.de ist für die aktuellen Browser Mozilla Firefox, 
+                        Google Chrome, Microsoft Internet Explorer und Apple Safari optimiert. Da für die Webseiten-Gestaltung 
+                        aktuelle Technologien beispielsweise für die Darstellung auf mobilen Geräten eingesetzt werden, ist eine 
+                        korrekte Darstellung mit älteren Browsern (beispielsweise MS Internet Explorer 8.0 und älter) nicht mehr gewährleistet.
+                        <br>
+                        <br>
+                        <em>e) Rechtswirksamkeit dieses Haftungsausschlusses</em>
+                        <br>
+                        Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen 
+                        wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder 
+                        nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer 
+                        Gültigkeit davon unberührt.
+                    </p>
+				</div>
+				
+			</div><!--linke Spalte -> ENDE-->
+		<!--###############
+		zweispaltiges Layout -> ENDE
+		###################-->
+		</div>
+	<!--###############
+	Gesamt-Contentwrapper -> ENDE
+	###################-->
+	
+		<!--#### Subnavigation für die Geschichtspunktseiten Desktop -> ANFANG ####-->
+		<!--<div class="sub-nav-contain">--> 
+			<!--<div class="sub-nav-grid-wrapper">
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-passiv"><a href="#">Vorheriges</a></div>
+				</div>
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-activ"><a href="gp06-bahnhofsvorplatz.html">Bahnhof</a></div>
+				</div>
+				<div class="sub-nav-grid-item">
+					<div class="sub-nav-text-passiv"><a href="#">Nachfolgendes</a></div>
+				</div>  
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-passiv"></div></a>
+				</div>
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-activ"></div></a>
+				</div>
+				<div class="sub-nav-grid-item">
+					<a href="" class="itemAnchor"><div class="sub-nav-icon-passiv"></div></a>
+				</div>
+			</div>-->
+			<!--<div class="sub-nav-line"></div>--> <!--Graue Linie der Subnavigation-->
+		<!--</div>--> 
+		<!--#### Subnavigation für die Geschichtspunktseiten Desktop -> ENDE ####-->
+	
+		<!--#################### Subnavigation für die Geschichtspunktseiten Mobil #####################-->
+		<!--<div class="sub-nav-contain-mobil">
+			<div class="arrow up"></div>
+			<div class="sub-nav-grid-wrapper-mobil">
+				<div class="icon-left"></div>
+				<div class="sub-nav-mobil-title">
+					<div class="sub-nav-mobil-title-text"><a href="">Bahnhof</a></div>
+				</div>
+				<div class="icon-right"></div>
+			</div>
+			<div class="sub-nav-grid-wrapper-slider">
+				<div class="sub-nav-grid-wrapper-mobile-menu">
+					<div class="sub-nav-mobile-menu">
+						<a href="gp07-bauernhochschule.html"><h3>Bauernhochschule</h3><p></p></a>
+						<a href="gp06-bahnhofsvorplatz.html"><h2>Bahnhof</h2><p></p></a>
+						<a href="#"><h3>Rammelsberg 2</h3><p></p></a>
+					</div>
+				</div>
+			</div>
+		</div>-->
+	
+	
+	<!--#################### Footer #####################-->
+		<footer>
+			<div class="footer-content-mobile">
+				<ul>
+					<li><a href="index.html">&copy; Geschichtspunkte Goslar 2022</a></li>
+					<li><a href="impressum.html">Impressum</a></li>
+					<li><a href="datenschutz.html">Datenschutz</a></li>
+				</ul>
+			</div>
+			<div class="footer-content" > <a href="index.html">&copy; Geschichtspunkte Goslar 2022</a>      |       <a href="impressum.html">Impressum</a>     |     <a href="datenschutz.html">Datenschutz</a> </div>
+		</footer>
+
+<script  src="JS/menu.js"></script>
+<script  src="JS/subMenu.js"></script>
+
+<body>
+</body>
+</html>
