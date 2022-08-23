@@ -1084,11 +1084,15 @@ Responsive
 	}
 
 	.footer-content-mobile ul li a{
-		color: #f2f2f2
+		color: #f2f2f2;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+		font-size: 18px;
+		color: #fff;
 	}
 
 	footer {
-		height: auto;
+		height: 300px;
 	}
 
 	/* der wrapper entfällt */
